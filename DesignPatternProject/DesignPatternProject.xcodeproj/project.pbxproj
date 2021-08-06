@@ -11,7 +11,6 @@
 		F7FD439B26BD7B1900173259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD439A26BD7B1900173259 /* SceneDelegate.swift */; };
 		F7FD439D26BD7B1900173259 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD439C26BD7B1900173259 /* ViewController.swift */; };
 		F7FD43A026BD7B1900173259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FD439E26BD7B1900173259 /* Main.storyboard */; };
-		F7FD43A226BD7B1C00173259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7FD43A126BD7B1C00173259 /* Assets.xcassets */; };
 		F7FD43A526BD7B1C00173259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FD43A326BD7B1C00173259 /* LaunchScreen.storyboard */; };
 		F7FD43B026BD7B1C00173259 /* DesignPatternProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43AF26BD7B1C00173259 /* DesignPatternProjectTests.swift */; };
 		F7FD43BB26BD7B1C00173259 /* DesignPatternProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43BA26BD7B1C00173259 /* DesignPatternProjectUITests.swift */; };
@@ -22,6 +21,7 @@
 		F7FD43D326BD7C1900173259 /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43D226BD7C1900173259 /* Maze.swift */; };
 		F7FD43D526BD7D6800173259 /* Dicrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43D426BD7D6800173259 /* Dicrection.swift */; };
 		F7FD43D726BD820600173259 /* MazeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43D626BD820600173259 /* MazeGame.swift */; };
+		F7FD43DB26BD8C6E00173259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7FD43DA26BD8C6E00173259 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		F7FD439A26BD7B1900173259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F7FD439C26BD7B1900173259 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7FD439F26BD7B1900173259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F7FD43A126BD7B1C00173259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7FD43A426BD7B1C00173259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7FD43A626BD7B1C00173259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7FD43AB26BD7B1C00173259 /* DesignPatternProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignPatternProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +62,7 @@
 		F7FD43D226BD7C1900173259 /* Maze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
 		F7FD43D426BD7D6800173259 /* Dicrection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dicrection.swift; sourceTree = "<group>"; };
 		F7FD43D626BD820600173259 /* MazeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeGame.swift; sourceTree = "<group>"; };
+		F7FD43DA26BD8C6E00173259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 				F7FD439E26BD7B1900173259 /* Main.storyboard */,
 				F7FD43A326BD7B1C00173259 /* LaunchScreen.storyboard */,
 				F7FD43A626BD7B1C00173259 /* Info.plist */,
-				F7FD43A126BD7B1C00173259 /* Assets.xcassets */,
+				F7FD43DA26BD8C6E00173259 /* Assets.xcassets */,
 			);
 			path = DesignPatternProject;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7FD43A526BD7B1C00173259 /* LaunchScreen.storyboard in Resources */,
-				F7FD43A226BD7B1C00173259 /* Assets.xcassets in Resources */,
+				F7FD43DB26BD8C6E00173259 /* Assets.xcassets in Resources */,
 				F7FD43A026BD7B1900173259 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
