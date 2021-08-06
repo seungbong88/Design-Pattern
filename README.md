@@ -26,7 +26,7 @@
   
 
 ---
-
+\n\n
 #### 예제 프로젝트 - 미로 맵 생성 
 
 
@@ -43,10 +43,10 @@
 
 
 
-<img src="./images/maze.png" align="left" alt="maze" style="zoom:50%;" />
+<img src="./images/maze.png" align="left" alt="maze" style="zoom:40%;" />
 
 
-
+\n\n
 > 기본 미로 맵의 createGame 메소드
 
 ```swift
