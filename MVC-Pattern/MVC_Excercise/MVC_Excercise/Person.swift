@@ -8,10 +8,15 @@
 
 import Foundation
 
-class Person {
+class Person :NSObject {
     
-    var name: String = ""
+    @objc dynamic var name: String = ""
     var age: Int = 0
+    
+    init(name:String, age:Int) {
+        self.name = name
+        self.age = age
+    }
     
     func changeName(newName: String) {
         self.name = newName
