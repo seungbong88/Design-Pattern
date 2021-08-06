@@ -21,12 +21,10 @@
   - 스테이트
   - 스트래티지
   - 템플릿 메서드
-  - 커맨드
+  - 커맨드  
 
-  
+---    
 
----
-\n\n
 #### 예제 프로젝트 - 미로 맵 생성 
 
 
@@ -43,10 +41,15 @@
 
 
 
-<img src="./images/maze.png" align="left" alt="maze" style="zoom:40%;" />
 
-
-\n\n
+ <br>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 > 기본 미로 맵의 createGame 메소드
 
 ```swift
