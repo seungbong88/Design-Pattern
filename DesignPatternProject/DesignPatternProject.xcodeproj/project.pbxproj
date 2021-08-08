@@ -22,6 +22,9 @@
 		F7FD43D526BD7D6800173259 /* Dicrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43D426BD7D6800173259 /* Dicrection.swift */; };
 		F7FD43D726BD820600173259 /* MazeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43D626BD820600173259 /* MazeGame.swift */; };
 		F7FD43DB26BD8C6E00173259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7FD43DA26BD8C6E00173259 /* Assets.xcassets */; };
+		F7FD43EE26BD905A00173259 /* AF_MazeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43ED26BD905A00173259 /* AF_MazeGame.swift */; };
+		F7FD43F026BD90AE00173259 /* MazeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43EF26BD90AE00173259 /* MazeFactory.swift */; };
+		F7FD43F226BEE3DE00173259 /* EnchantedMazeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD43F126BEE3DE00173259 /* EnchantedMazeFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		F7FD43D426BD7D6800173259 /* Dicrection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dicrection.swift; sourceTree = "<group>"; };
 		F7FD43D626BD820600173259 /* MazeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeGame.swift; sourceTree = "<group>"; };
 		F7FD43DA26BD8C6E00173259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7FD43ED26BD905A00173259 /* AF_MazeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AF_MazeGame.swift; sourceTree = "<group>"; };
+		F7FD43EF26BD90AE00173259 /* MazeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeFactory.swift; sourceTree = "<group>"; };
+		F7FD43F126BEE3DE00173259 /* EnchantedMazeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantedMazeFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +119,6 @@
 		F7FD439726BD7B1900173259 /* DesignPatternProject */ = {
 			isa = PBXGroup;
 			children = (
-				F7FD43D826BD83F100173259 /* Common */,
-				F7FD43C826BD7B7C00173259 /* Maze */,
 				F7FD439826BD7B1900173259 /* AppDelegate.swift */,
 				F7FD439A26BD7B1900173259 /* SceneDelegate.swift */,
 				F7FD439C26BD7B1900173259 /* ViewController.swift */,
@@ -122,6 +126,8 @@
 				F7FD43A326BD7B1C00173259 /* LaunchScreen.storyboard */,
 				F7FD43A626BD7B1C00173259 /* Info.plist */,
 				F7FD43DA26BD8C6E00173259 /* Assets.xcassets */,
+				F7FD43D826BD83F100173259 /* Common */,
+				F7FD43C826BD7B7C00173259 /* Maze */,
 			);
 			path = DesignPatternProject;
 			sourceTree = "<group>";
@@ -148,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				F7FD43D926BD83FC00173259 /* MapSite */,
-				F7FD43D226BD7C1900173259 /* Maze.swift */,
-				F7FD43D626BD820600173259 /* MazeGame.swift */,
+				F7FD43EB26BD902A00173259 /* Basic */,
+				F7FD43EC26BD903000173259 /* AbstractFactory */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -169,8 +175,27 @@
 				F7FD43CC26BD7BFB00173259 /* Room.swift */,
 				F7FD43CE26BD7C0600173259 /* Wall.swift */,
 				F7FD43D026BD7C0D00173259 /* Door.swift */,
+				F7FD43D226BD7C1900173259 /* Maze.swift */,
 			);
 			path = MapSite;
+			sourceTree = "<group>";
+		};
+		F7FD43EB26BD902A00173259 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				F7FD43D626BD820600173259 /* MazeGame.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		F7FD43EC26BD903000173259 /* AbstractFactory */ = {
+			isa = PBXGroup;
+			children = (
+				F7FD43ED26BD905A00173259 /* AF_MazeGame.swift */,
+				F7FD43EF26BD90AE00173259 /* MazeFactory.swift */,
+				F7FD43F126BEE3DE00173259 /* EnchantedMazeFactory.swift */,
+			);
+			path = AbstractFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,12 +332,15 @@
 				F7FD43CF26BD7C0600173259 /* Wall.swift in Sources */,
 				F7FD43D326BD7C1900173259 /* Maze.swift in Sources */,
 				F7FD43D126BD7C0D00173259 /* Door.swift in Sources */,
+				F7FD43EE26BD905A00173259 /* AF_MazeGame.swift in Sources */,
+				F7FD43F026BD90AE00173259 /* MazeFactory.swift in Sources */,
 				F7FD43D726BD820600173259 /* MazeGame.swift in Sources */,
 				F7FD439926BD7B1900173259 /* AppDelegate.swift in Sources */,
 				F7FD439B26BD7B1900173259 /* SceneDelegate.swift in Sources */,
 				F7FD43CB26BD7BD100173259 /* MapSite.swift in Sources */,
 				F7FD43D526BD7D6800173259 /* Dicrection.swift in Sources */,
 				F7FD43CD26BD7BFB00173259 /* Room.swift in Sources */,
+				F7FD43F226BEE3DE00173259 /* EnchantedMazeFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
