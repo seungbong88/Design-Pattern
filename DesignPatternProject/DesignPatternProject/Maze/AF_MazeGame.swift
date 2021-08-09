@@ -9,11 +9,17 @@ import Foundation
 
 /// 추상팩토리 패턴을 이용한 미로 게임
 class AF_MazeGame {
+  
+  func startGame() {
+    // 일반 미로 게임 생성
+    let maze = createGame(factory: MazeFactory())
+    
+    // 폭탄 미로 게임 생성
+    let boomedMaze = createGame(factory: BoombedMazeFactory())
+  }
+  
   // 방 두 개 짜리 맵을 생성
   private func createGame(factory: MazeFactory) -> Maze {
-    
-    let factory = MazeFactory() // 
-    
     let maze = factory.makeMaze()
     let r1 = factory.makeRoom(num: 1)
     let r2 = factory.makeRoom(num: 2)
@@ -27,5 +33,4 @@ class AF_MazeGame {
     
     return maze
   }
-
 }

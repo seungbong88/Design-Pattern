@@ -89,9 +89,97 @@ public class MazeGame {
    - 종류가 다른 상세클래스를 쉽게 대체할 수 있다. (ex_ Door과 Room 객체를 생성할 때에는 Factory의 함수로 접근하여 바로 생성할 수 있다.)
 
 3. 구조
-   - AbstractFactory : 객체를 생성하는 인터페이스를 제공하는 프로토콜
-   - ConcreteFactory : AbstractFactory를 채택하여 상세 객체를 생성하는 클래스
-   - AbstractProduct : 각 Product 종류별로 필요한 연산들에 대한 인터페이스 제공
+   - AbstractFactory : 객체를 생성하는 인터페이스를 제공
+   
+     ```swift
+     // Abstract Factory
+     class MazeFactory {
+       func makeMaze() -> Maze {
+         return Maze()
+       }
+       func makeRoom(num: Int) -> Room {
+         return Room(roomNumber: num)
+       }
+       func makeWall() -> Wall {
+         return Wall()
+       }
+       func makeDoor(room1: Room, room2: Room) -> Door {
+         return Door(room1: room1, room2: room2)
+       }
+     }
+     ```
+   
+   - ConcreteFactory : AbstractFactory를 상속하여 상세 객체를 생성하는 연산 수행
+   
+     ```swift
+     // Concrete Factory
+     class BoombedMazeFactory: MazeFactory {
+       override func makeWall() -> Wall {
+         return BoombedWall()
+       }
+       
+       override func makeRoom(num: Int) -> Room {
+         return RoomWithBoomb(roomNumber: num)
+       }
+     }
+     ```
+   
+   - AbstractProduct : 각 Product 종류별로 필요한 연산들에 대한 인터페이스 제공 (종류마다 하나씩의 Abstract Product 필요)
+   
+     ```swift
+     // Abstract Product
+     public class Wall: MapSite {
+       func enter() {
+         print("벽 입니다. 들어갈 수 없습니다.")
+       }
+     }
+     ```
+   
    - ConcreteProduct : 구체적으로 팩토리가 생성할 객체 정의, AbstractProduct를 채택하여 인터페이스를 구현하는 클래스
+   
+     ```swift
+     // Concrete Product
+     class BoombedWall: Wall {
+       override func enter() {
+         print("폭탄이 터졌습니다. 사망하였습니다.")
+       }
+     }
+     ```
+   
    - Client : AbstractFactory와 AbstractProduct 에 정의된 연산만을 이용하여 사용
+   
+     ```swift
+     /// 추상팩토리 패턴을 이용한 미로 게임
+     class AF_MazeGame {
+       
+       func startGame() {
+         // 일반 미로 게임 생성
+         let maze = createGame(factory: MazeFactory())
+         
+         // 폭탄 미로 게임 생성
+         let boomedMaze = createGame(factory: BoombedMazeFactory())
+       }
+       
+       // 방 두 개 짜리 맵을 생성
+       private func createGame(factory: MazeFactory) -> Maze {
+         let maze = factory.makeMaze()
+         let r1 = factory.makeRoom(num: 1)
+         let r2 = factory.makeRoom(num: 2)
+         let door = factory.makeDoor(room1: r1, room2: r2)
+         
+         maze.addRoom(room: r1)
+         maze.addRoom(room: r2)
+         
+         r1.setSide(direction: .east, site: door)
+         r2.setSide(direction: .west, site: door)
+         
+         return maze
+       }
+     }
+     ```
+   
+     - 이처럼 사용자는 factory를 생성하여 각각의 생성자를 이용해 초기화하지 않고 타입을 파라미터를 넘기는 방법으로 다른 객체를 생성할 수 있다.
+     - 또한 상세 factory를 추가로 구현함으로써 다른 종류의 factory 를 생성해 비슷한 종류의 다른 객체를 간단하게 생성할 수 있다.
+
+
 

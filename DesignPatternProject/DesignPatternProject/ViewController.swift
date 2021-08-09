@@ -12,9 +12,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let gameManager = AF_MazeGame()
+    gameManager.startGame()
   }
-
-  
-
 }
 

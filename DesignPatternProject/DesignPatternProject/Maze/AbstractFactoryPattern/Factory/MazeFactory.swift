@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Abstract Factory
 class MazeFactory {
   func makeMaze() -> Maze {
     return Maze()

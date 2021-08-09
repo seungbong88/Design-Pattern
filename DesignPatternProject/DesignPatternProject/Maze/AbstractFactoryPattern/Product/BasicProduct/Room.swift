@@ -17,7 +17,7 @@ public class Room: MapSite {
   
   // 들어가기
   func enter() {
-    
+    print("방 \(roomNumber) 에 들어왔습니다.")
   }
   
   // 방의 주변 값 설정하기
