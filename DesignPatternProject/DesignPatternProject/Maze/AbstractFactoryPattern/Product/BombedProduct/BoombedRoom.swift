@@ -8,7 +8,7 @@
 import Foundation
 
 // Concrete Product
-class RoomWithBoomb: Room {
+class BoombedRoom: Room {
   override func enter() {
     print("방 \(roomNumber) 에 들어왔습니다.")
     

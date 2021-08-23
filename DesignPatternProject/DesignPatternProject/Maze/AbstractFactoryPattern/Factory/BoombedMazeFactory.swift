@@ -14,6 +14,6 @@ class BoombedMazeFactory: MazeFactory {
   }
   
   override func makeRoom(num: Int) -> Room {
-    return RoomWithBoomb(roomNumber: num)
+    return BoombedRoom(roomNumber: num)
   }
 }

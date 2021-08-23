@@ -7,11 +7,19 @@
 
 import Foundation
 
-public class Maze {
-  private var rooms: [Room] = []
+class Maze {
+  var rooms: [Room] = []
   
   func addRoom(room: Room) {
     rooms.append(room)
+  }
+  
+  func addWall(roomNumber: Int, side: Direction) {
+    for room in rooms {
+      if room.roomNumber == roomNumber {
+        room.setSide(direction: side, site: Wall())
+      }
+    }
   }
   
   // 해당 번호의 방 반환
@@ -23,4 +31,5 @@ public class Maze {
     }
     return nil
   }
+  
 }
