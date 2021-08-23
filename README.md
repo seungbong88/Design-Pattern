@@ -6,22 +6,35 @@
 
 - 생성 패턴
 
-  - 추상 팩토리
-  - 팩토리 메서드
-  - 싱글턴
+  - [Abstract Factory](# 1. 추상 팩토리(Abstract Factory) 패턴)
+  - [Builder](#2. 빌더(Builder) 패턴)
+  - Factory Method
+  - Prototype
+  - Singleton
 
 - 구조 패턴
 
-  - 컴퍼지트
-  - 데커레이터
+  - Adapter
+  - Bridge
+  - Composite
+  - Decorator
+  - Facade
+  - Flyweight
+  - Proxy
 
 - 행위 패턴
 
-  - 옵저버
-  - 스테이트
-  - 스트래티지
-  - 템플릿 메서드
-  - 커맨드  
+  - Chain of Responsibility
+  - Command
+  - Interpreter
+  - Iterator
+  - Mediator
+  - Memento
+  - Observer
+  - State
+  - Strategy
+  - Template Method
+  - Visitor
 
 
 
@@ -78,7 +91,7 @@ public class MazeGame {
 
 
 
-### 1. 추상 팩토리 패턴
+### 1. 추상 팩토리(Abstract Factory) 패턴
 
 1. 개념
    - 상세화된 서브클래스를 정의하지 않고도 서로 관련성이 있거나 독립적인 여러 객체 종류을 생성하기 위한 인터페이스를 제공하는 생성 패턴
@@ -182,4 +195,126 @@ public class MazeGame {
      - 또한 상세 factory를 추가로 구현함으로써 다른 종류의 factory 를 생성해 비슷한 종류의 다른 객체를 간단하게 생성할 수 있다.
 
 
+
+
+
+### 2. 빌더(Builder) 패턴
+
+1. 개념
+
+   - 복잡한 객체를 생성하는 방법과 표현하는 방법을 정의하는 클래스를 별도로 분리하여, 서로 다른 표현이라도 이를 생성할 수 있는 동일한 절차를 제공하는 패턴
+     - 복잡한 객체란 다양한 구성요소를 갖는 객체를 의미한다.
+       예를 들어 House 라는 객체를 생성할 때 집 객체를 구성하는 구성요소로는 지붕, 창고, 베란다, 방, 부엌.. 등 여러가지가 있다. '성' 을 생성할 때에 지붕은 돌로 되어야겠지만, 아파트는 콘크리트, 통나무집은 나무를 이용할 것이다. 그렇다고 House라는 객체를 상속받는 각각의 클래스를 두게 되면, `let castle = House(windows: 4, doors: 3, rooms: 2, bethroom: 1, roop: "나무", balcony: 0....)` 
+       위와 같이 생성자 파라미터가 많아지는 아주 깨끗하지 못한 코드를 사용해야만 한다.
+   - 복잡한 구성요소를 차례차례 생성하는 패턴
+
+2. 참여자
+
+   - Director
+
+     - Builder 인터페이스를 사용하여 빌더에게 각 구성요소를 생성할 것을 요청한다.
+
+     - 빌더의 구성요소 생성 단계를 호출한다.
+
+       ```swift
+       class MazeGame {
+         func createMae(builder: MazeBuilder) -> Maze {
+           builder.buildMaze()	// 각 Builder에서 구성요소를 만드는 함수를 호출한다.
+       		builder.buildRoom(num: Int)
+       		builder.buildWall()
+           
+           return builder.getMaze()
+         }
+       }
+       ```
+
+   - Builder (Abstract Builder)
+
+     - 객체의 각 구성요소를 생성하기 위한 추상 인터페이스를 제공한다.
+
+       ```swift
+       protocol MazeBuilder {
+         func buildeMae()
+         func buildRoom()
+         func buildWall()
+         
+         func getMaze() -> Maze
+       }
+       ```
+
+       - 설명에 의하면 MazeBuilder 는 세부 구현방법을 정의하지 않은 추상클래스이기 때문에 `class` 가 아닌 `protocol` 을 사용하였다.
+
+   - Concrete Builder
+
+     - Builder 클래스에 정의된 인터페이스를 구현하는 상세 클래스
+
+     - 각 객체 타입에 맞는 Concrete Builder 를 생성해 사용한다.
+
+       ```swift
+       class BoombedMazeBuilder: MazeBuilder {
+       	var currentMaze: Maze?
+         
+        	func buildeMae() {
+       		currentMaze = BoombedMaze()
+         }
+         
+         func buildRoom(num: Int) {
+       		currentMaze.makeRoom(num: num)
+           currentMaze.makeRoom(num: num)
+         }
+         
+         func buildWall() {
+           currentMaze.makeWall()
+         } 
+         
+         func getMaze() -> Maze {
+           return currentMaze
+         }
+       }
+       ```
+
+   - Product 
+
+     - 생성할 객체
+
+     - 개념에서 설명했듯 구성요소가 많은 복잡한 객체가 주로 사용된다.
+
+       ```swift
+       class Maze {
+         .... 
+       }
+       ```
+
+   - Client
+
+     - Client는 Dicrector와 ConcreteBuilder 객체를 선언하여 원하는 Product를 생성한다.
+
+     - 이때 클라이언트는 객체 구성요소를 어떤 방법으로 생성하는지 알지 못한다. (은닉화되어있기 때문)
+
+       ```swift
+       var maze: Maze			// 만들고자 하는 Product
+       var game: MazeGame 	// Director
+       var boombedBuilder: BoombedBuilder // Concrete Builder
+       
+       game.createMaze(builder: boombedBuilder)
+       maze = builder.getMaze()
+       ```
+
+
+
+3. 특징
+   - **장점1**. 사용자는 Builder를 통해서 제품 생성에 대한 코드만 작성하면 되며, 구체적은 내용은 Builder 내에서 처리되기 때문에 유지보수가 용이하다.
+   - **장점2**. 복잡한 객체의 생성 절차를 단계별로 나눌 수 있다.
+     - Director는 Builder의 각각 구성요소를 생성하는 함수를 호출하기 때문에 구성요소 생성 절차를 정의하고 모듈화할 수 있다.
+
+
+
+4. 추상팩토리 패턴 vs 빌더 패턴
+
+   | 추상팩토리 패턴                              | 빌더 패턴                                            |
+   | -------------------------------------------- | :--------------------------------------------------- |
+   | 유사한 객체 종류가 존재할 때 사용(ex. UIKit) | 각 구성요소의 생성 단계에 초점을 맞춤                |
+   | 객체 생성 즉시 반환                          | 각 단계별 구성요소 생성 후 마지막 단계에서 객체 반환 |
+
+   
 

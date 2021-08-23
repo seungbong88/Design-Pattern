@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F731F90F26C17D6F0031F718 /* BoombedMazeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731F90E26C17D6F0031F718 /* BoombedMazeFactory.swift */; };
-		F731F91126C17DA00031F718 /* BombedWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731F91026C17DA00031F718 /* BombedWall.swift */; };
 		F731F91426C17E570031F718 /* BoombedWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731F91326C17E570031F718 /* BoombedWall.swift */; };
 		F731F91626C17F260031F718 /* RoomWithBoomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731F91526C17F260031F718 /* RoomWithBoomb.swift */; };
 		F7FD439926BD7B1900173259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD439826BD7B1900173259 /* AppDelegate.swift */; };
@@ -48,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		F731F90E26C17D6F0031F718 /* BoombedMazeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoombedMazeFactory.swift; sourceTree = "<group>"; };
-		F731F91026C17DA00031F718 /* BombedWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombedWall.swift; sourceTree = "<group>"; };
 		F731F91326C17E570031F718 /* BoombedWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoombedWall.swift; sourceTree = "<group>"; };
 		F731F91526C17F260031F718 /* RoomWithBoomb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWithBoomb.swift; sourceTree = "<group>"; };
 		F7FD439526BD7B1900173259 /* DesignPatternProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignPatternProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +184,6 @@
 			children = (
 				F7FD43ED26BD905A00173259 /* AF_MazeGame.swift */,
 				F7FD43EC26BD903000173259 /* AbstractFactoryPattern */,
-				F731F91026C17DA00031F718 /* BombedWall.swift */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -361,7 +358,6 @@
 				F7FD439926BD7B1900173259 /* AppDelegate.swift in Sources */,
 				F7FD439B26BD7B1900173259 /* SceneDelegate.swift in Sources */,
 				F731F91426C17E570031F718 /* BoombedWall.swift in Sources */,
-				F731F91126C17DA00031F718 /* BombedWall.swift in Sources */,
 				F7FD43CB26BD7BD100173259 /* MapSite.swift in Sources */,
 				F7FD43D526BD7D6800173259 /* Dicrection.swift in Sources */,
 				F7FD43CD26BD7BFB00173259 /* Room.swift in Sources */,
