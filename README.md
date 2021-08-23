@@ -6,7 +6,7 @@
 
 - 생성 패턴
 
-  - [Abstract Factory](#1.-추상-팩토리(abstract-factory)-패턴)
+  - [Abstract Factory](#1.-추상-팩토리-패턴)
   - [TEST](#test)
 
   - [Builder](#2. 빌더(Builder) 패턴)
@@ -93,7 +93,7 @@ public class MazeGame {
 
 
 
-### 1. 추상 팩토리(Abstract Factory) 패턴
+### 1. 추상 팩토리 패턴
 
 1. 개념
    - 상세화된 서브클래스를 정의하지 않고도 서로 관련성이 있거나 독립적인 여러 객체 종류을 생성하기 위한 인터페이스를 제공하는 생성 패턴
