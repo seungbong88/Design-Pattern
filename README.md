@@ -102,7 +102,7 @@ public class MazeGame {
 
 3. 구조
    - AbstractFactory : 객체를 생성하는 인터페이스를 제공
-   
+
      ```swift
      // Abstract Factory
      class MazeFactory {
@@ -120,9 +120,9 @@ public class MazeGame {
        }
      }
      ```
-   
+
    - ConcreteFactory : AbstractFactory를 상속하여 상세 객체를 생성하는 연산 수행
-   
+
      ```swift
      // Concrete Factory
      class BoombedMazeFactory: MazeFactory {
@@ -135,9 +135,9 @@ public class MazeGame {
        }
      }
      ```
-   
+
    - AbstractProduct : 각 Product 종류별로 필요한 연산들에 대한 인터페이스 제공 (종류마다 하나씩의 Abstract Product 필요)
-   
+
      ```swift
      // Abstract Product
      public class Wall: MapSite {
@@ -146,9 +146,9 @@ public class MazeGame {
        }
      }
      ```
-   
+
    - ConcreteProduct : 구체적으로 팩토리가 생성할 객체 정의, AbstractProduct를 채택하여 인터페이스를 구현하는 클래스
-   
+
      ```swift
      // Concrete Product
      class BoombedWall: Wall {
@@ -157,23 +157,15 @@ public class MazeGame {
        }
      }
      ```
-   
+
    - Client : AbstractFactory와 AbstractProduct 에 정의된 연산만을 이용하여 사용
-   
+
      ```swift
-     /// 추상팩토리 패턴을 이용한 미로 게임
+     /// 추상팩토리 패턴을 이용한 미로 게임 생성
      class AF_MazeGame {
-       
-       func startGame() {
-         // 일반 미로 게임 생성
-         let maze = createGame(factory: MazeFactory())
-         
-         // 폭탄 미로 게임 생성
-         let boomedMaze = createGame(factory: BoombedMazeFactory())
-       }
-       
+     
        // 방 두 개 짜리 맵을 생성
-       private func createGame(factory: MazeFactory) -> Maze {
+       func createGame(factory: MazeFactory) -> Maze {
          let maze = factory.makeMaze()
          let r1 = factory.makeRoom(num: 1)
          let r2 = factory.makeRoom(num: 2)
@@ -189,9 +181,16 @@ public class MazeGame {
        }
      }
      ```
-   
-     - 이처럼 사용자는 factory를 생성하여 각각의 생성자를 이용해 초기화하지 않고 타입을 파라미터를 넘기는 방법으로 다른 객체를 생성할 수 있다.
-     - 또한 상세 factory를 추가로 구현함으로써 다른 종류의 factory 를 생성해 비슷한 종류의 다른 객체를 간단하게 생성할 수 있다.
+
+     ```swift
+     // 폭탄 미로 게임 생성
+     let factory = BoombedMazeFactory()
+     let gameManager = AF_MazeGame()
+     maze = gameManager.createGame(factory: factory)
+     ```
+
+     - 실제로 사용자가 미로게임을 생성할 때에는 아래의 소스코드만 작성하면 된다.
+     - 구현할 Product를 생성하는 Factory 생성 후 팩토리를 파라미터로 넘겨 그에 맞는 Product를 생성한다.
 
 
 
@@ -216,11 +215,11 @@ public class MazeGame {
      - 빌더의 구성요소 생성 단계를 호출한다.
 
        ```swift
-       class MazeGame {
-         func createMae(builder: MazeBuilder) -> Maze {
-           builder.buildMaze()	// 각 Builder에서 구성요소를 만드는 함수를 호출한다.
-       		builder.buildRoom(num: Int)
-       		builder.buildWall()
+       class MazeCreator {
+         func createGame(builder: MazeBuilder) -> Maze {
+           builder.buildMaze() // 각 Builder에서 구성요소를 만드는 함수를 호출한다.
+           builder.buildRoom()
+           builder.buildWall()
            
            return builder.getMaze()
          }
@@ -233,14 +232,16 @@ public class MazeGame {
 
        ```swift
        protocol MazeBuilder {
-         func buildeMae()
+         var currentMaze: Maze? { get set }
+         
+         func buildMaze()
          func buildRoom()
          func buildWall()
          
          func getMaze() -> Maze
        }
        ```
-
+       
        - 설명에 의하면 MazeBuilder 는 세부 구현방법을 정의하지 않은 추상클래스이기 때문에 `class` 가 아닌 `protocol` 을 사용하였다.
 
    - Concrete Builder
@@ -248,55 +249,58 @@ public class MazeGame {
      - Builder 클래스에 정의된 인터페이스를 구현하는 상세 클래스
 
      - 각 객체 타입에 맞는 Concrete Builder 를 생성해 사용한다.
-
+   
        ```swift
-       class BoombedMazeBuilder: MazeBuilder {
-       	var currentMaze: Maze?
+       final class BoombedMazeBuilder: MazeBuilder {
+         var currentMaze: Maze?
          
-        	func buildeMae() {
-       		currentMaze = BoombedMaze()
+         func buildMaze() {
+           currentMaze = Maze()
          }
          
-         func buildRoom(num: Int) {
-       		currentMaze.makeRoom(num: num)
-           currentMaze.makeRoom(num: num)
+         func buildRoom() {
+           currentMaze?.addRoom(room: BoombedRoom(roomNumber: 1))
+           currentMaze?.addRoom(room: BoombedRoom(roomNumber: 2))
          }
          
          func buildWall() {
-           currentMaze.makeWall()
-         } 
+           guard let maze = currentMaze else { return }
+           
+           if maze.rooms.count > 0 {
+             let targetRoom = maze.rooms.first!
+             targetRoom.setSide(direction: .east, site: BoombedWall())
+           }
+         }
          
          func getMaze() -> Maze {
-           return currentMaze
+           return currentMaze!
          }
        }
        ```
-
+   
    - Product 
-
+   
      - 생성할 객체
-
+   
      - 개념에서 설명했듯 구성요소가 많은 복잡한 객체가 주로 사용된다.
-
+   
        ```swift
        class Maze {
          .... 
        }
        ```
-
+   
    - Client
-
+   
      - Client는 Dicrector와 ConcreteBuilder 객체를 선언하여 원하는 Product를 생성한다.
-
+   
      - 이때 클라이언트는 객체 구성요소를 어떤 방법으로 생성하는지 알지 못한다. (은닉화되어있기 때문)
-
+   
        ```swift
-       var maze: Maze			// 만들고자 하는 Product
-       var game: MazeGame 	// Director
-       var boombedBuilder: BoombedBuilder // Concrete Builder
-       
-       game.createMaze(builder: boombedBuilder)
-       maze = builder.getMaze()
+       // 마법 미로 게임 생성
+       let builder = EnchantedMazeBuilder() 					// Concrete Builder
+       let director = MazeCreator() 									// Director
+       maze = director.createGame(builder: builder) 	// 만들고자 하는 Product
        ```
 
 
