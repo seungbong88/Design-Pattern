@@ -7,7 +7,7 @@
 - 생성 패턴
 
   - [Abstract Factory](#1.-추상-팩토리(abstract-pattern)-패턴)
-  - [Builder](#2. 빌더(Builder) 패턴)
+  - [Builder](#2.-빌더(builder)-패턴)
   - Factory Method
   - Prototype
   - Singleton
