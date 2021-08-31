@@ -10,8 +10,9 @@ import UIKit
 class ViewController: UIViewController {
 
   enum DesignPattern {
-    case abstractFactory
-    case builder
+    case abstractFactory  // 추상팩토리 패턴
+    case builder          // 빌더 패턴
+    case factoryMethod    // 팩토리 메서드 패턴
   }
   
   private var maze: Maze?
@@ -29,6 +30,8 @@ class ViewController: UIViewController {
       gameWithAbstractFactoryPattern()
     case .builder:
       gameWithBuilderPattern()
+    case .factoryMethod:
+      gameWithFactoryMethodPattern()
     }
   }
   
@@ -36,16 +39,22 @@ class ViewController: UIViewController {
   
   private func gameWithAbstractFactoryPattern() {
     // 폭탄 미로 게임 생성
-    let factory = BoombedMazeFactory()
-    let gameManager = AF_MazeGame()
+    let factory = BombedMazeFactory()
+    let gameManager = AF_MazeCreator()
     maze = gameManager.createGame(factory: factory)
   }
   
   private func gameWithBuilderPattern() {
     // 마법 미로 게임 생성
     let builder = EnchantedMazeBuilder()
-    let director = MazeCreator()
+    let director = Builder_MazeCreator()
     maze = director.createGame(builder: builder)
+  }
+  
+  private func gameWithFactoryMethodPattern() {
+    // 하드코어 미로 게임 생성
+    let creator = HardcoreMazeCreator()
+    maze = creator.createMaze()
   }
 }
 

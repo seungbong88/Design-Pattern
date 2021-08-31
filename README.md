@@ -6,9 +6,12 @@
 
 - 생성 패턴
 
-  - [Abstract Factory](#1.-추상-팩토리(abstract-pattern)-패턴)
-  - [Builder](#2.-빌더(builder)-패턴)
-  - Factory Method
+  - [기본 예제 코드](#기본 예제 코드 - 미로 맵 생성 )
+  - [객체 생성 패턴 vs 클래스 생성 패턴](#0.-객체-생성-패턴-vs-클래스-생성-패턴)
+
+  - [1. Abstract Factory](#1.-추상-팩토리(abstract-pattern)-패턴)
+  - [2. Builder](#2.-빌더(builder)-패턴)
+  - [3. Factory Method](#3.-팩토리 메서드(factory-method)-패턴)
   - Prototype
   - Singleton
 
@@ -41,7 +44,7 @@
 ---
 
 
-### 0. 예제 프로젝트 - 미로 맵 생성 
+### 기본 예제 코드 - 미로 맵 생성 
 
 > 기본 미로 맵 생성 클래스
 
@@ -87,6 +90,14 @@ public class MazeGame {
 
 
 ---
+
+### 0. 객체 생성 패턴 vs 클래스 생성 패턴
+
+- 객체 생성 패턴
+  - 인스턴스로 만들 클래스를 다양하게 만득ㄹ기 위한 용도
+  - 상속을 사용
+- 클래스 생성 패턴
+  - 인스턴스화 작업을 다른 객체에게 위임
 
 
 
@@ -319,5 +330,124 @@ public class MazeGame {
    | 유사한 객체 종류가 존재할 때 사용(ex. UIKit) | 각 구성요소의 생성 단계에 초점을 맞춤                |
    | 객체 생성 즉시 반환                          | 각 단계별 구성요소 생성 후 마지막 단계에서 객체 반환 |
 
+   - 둘 모두 객체 생성 패턴
+
+
+
+
+
+### 3. 팩토리 메서드(Factory Method) 패턴
+
+1. 개념
+   - 객체를 생성하기 위해 인터페이스를 정의하지만, 어떤 클래스의 인스턴스를 생성할지에 대한 결정은 <u>서브클래스</u>가 내리도록 하는 패턴
+   - 객체의 실제 생성을 서브클래스에게 위임하는 '클래스 생성 패턴'
+   - 어떤 클래스의 인스턴스를 구현할지는 생성자의 매개변수를 이용하여 판단한다.
+2. 참여자
+   - Creator
+     - ConcreteProduct 객체를 반환하는 <u>팩토리 메서드</u>를 선언
+     - ConcreteCreator 메서드를 호출하여 그에 맞는 인스턴스를 반환한다.
+   - ConcreteCreator
+     - Creator 에서 선언한 메서드를 <u>재정의</u>하여 ConcreteProduct객체 반환
+     - 타입에 맞는 인스턴스를 실제로 생성하여 반환한다.
+   - Product
+     - 생성하고자 하는 인스턴스를 만들기 위한 추상클래스
+   - ConcreteProduct
+     - Product의 서브클래스. Product에서 선언한 인터페이스를 실제로 구현
+3. 구현 방법
+   - Creator를 생성하는 방법에는 두 가지가 있다.
+     1. Creator 를 추상클래스로 사용하는 방법
+        - 실제로 구현을 담당하는 상세클래스가 반드시 있어야 하므로 유연하지 못함 (자주 사용하지 않음)
+     2. Creator 를 구체클래스로 사용하고, 이를 상속한 서브클래스에서 재정의하는 경우
+        - 서브클래스가 필요 없는 경우에는 Creator 만으로 객체를 생성하는 방법으로 유연한 대처 가능
+   - 팩토리 메서드를 매개변수화 하여 사용할 수 있다.
+     - 팩토리 메서드가 매개변수를 받아 어떤 객체를 생성할지 결정하는 방법
+     - Creator 에서 매개변수에 따라 객체를 반환하도록 하고, 서브클래스에서는 이를 재정의할 경우 새로운 타입을 추가하거나 기존 타입을 다른 객체로 치환하여 반환하는 등 제품을 쉽게 확장하거나 변경할 수 있다.
+
+
+
+
+
+.. 라고 했는데 검색해본 걸 정리하면
+
+1. 팩토리 메서드 패턴
+
+   - 객체를 생성하는 공장인 팩토리 객체를 두고, 타입에 따라 각각 다른 객체를 반환하도록 한다.
+
+     ```swift
+     // AS-IS
+      func createCompWithoutFactory() {
+     	let comp1 = UIButton()
+     	let comp2 = UISwitch()
+     	let comp3 = UIDatePicker()
+        
+     	comp1.isEnabled = true
+     	comp2.isEnabled = false
+     	comp3.isEnabled = true
+     }
+       
+     // 팩토리 메서드 패턴
+     func createCompWithFactory() {
+     	let factory = NavigationComponentFactory()
+     	let cmp1 = factory.createComponent(type: .uiButton, isEnabled: true)
+     	let cmp2 = factory.createComponent(type: .uiSwitch, isEnabled: false)
+     	let cmp3 = factory.createComponent(type: .uiDatePicker, isEnabled: true)
+     }
+     ```
+
+     - 비슷한 객체를 생성할 때 생성자를 이용해 각각 만들어주는 것이 아니라 팩토리라는 객체 안에서 각 타입에 맞게 생성할 수 있도록 하는 것
+     - 생성자가 변경될 때에 팩토리 한 곳에서만 변경해주면 된다.
+     - 객체가 어떻게 생성되는지 사용자는 몰라도 된다.
    
+2. 추상 팩토리 패턴
+
+   - 팩토리 메서드 패턴을 한 단계 더 추상화한 패턴
+
+   - 비슷한 객체가 있는 경우에는 Factory를 추상화하여 서브클래스에서 각각의 타입에 맞는 객체들을 생성하는 방법
+
+     ```swift
+     enum ComponentType {
+       case uiButton
+       case uiSwitch
+     }
+     
+     // MARK:- Abstract Factory
+     protocol ComponentFactory {
+       func createComponent(type: ComponentType, isEnabled: Bool) -> UIControl
+     }
+     
+     // MARK:- Concrete Factory
+     final class LightThemeFactory: ComponentFactory {
+       func createComponent(type: ComponentType, isEnabled: Bool) -> UIControl {
+         switch type {
+         case .uiButton:
+           let button = LightButton()
+           button.isEnabled = isEnabled
+           return button
+         case .uiSwitch:
+           let switchh = LightSwitch()
+           switchh.isEnabled = isEnabled
+           return switchh
+         }
+       }
+     }
+     
+     final class DarkThemeFactory: ComponentFactory {
+       func createComponent(type: ComponentType, isEnabled: Bool) -> UIControl {
+         switch type {
+         case .uiButton:
+           let button = DarkButton()
+           button.isEnabled = isEnabled
+           return button
+         case .uiSwitch:
+           let switchh = DarkSwitch()
+           switchh.isEnabled = isEnabled
+           return switchh
+         }
+       }
+     }
+     ```
+
+     
+
+
 
