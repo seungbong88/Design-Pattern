@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F70E6A7426D3E4AA00D54D92 /* MazeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E6A7326D3E4AA00D54D92 /* MazeBuilder.swift */; };
 		F70E6A7726D3E4BA00D54D92 /* BombedMazeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E6A7626D3E4BA00D54D92 /* BombedMazeBuilder.swift */; };
+		F73082F826DE8102008C3B5D /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73082F726DE8102008C3B5D /* Singleton.swift */; };
 		F731F90F26C17D6F0031F718 /* BombedMazeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731F90E26C17D6F0031F718 /* BombedMazeFactory.swift */; };
 		F731F91426C17E570031F718 /* BombedWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731F91326C17E570031F718 /* BombedWall.swift */; };
 		F731F91626C17F260031F718 /* BombedRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731F91526C17F260031F718 /* BombedRoom.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		F70E6A7326D3E4AA00D54D92 /* MazeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeBuilder.swift; sourceTree = "<group>"; };
 		F70E6A7626D3E4BA00D54D92 /* BombedMazeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombedMazeBuilder.swift; sourceTree = "<group>"; };
+		F73082F726DE8102008C3B5D /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		F731F90E26C17D6F0031F718 /* BombedMazeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombedMazeFactory.swift; sourceTree = "<group>"; };
 		F731F91326C17E570031F718 /* BombedWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombedWall.swift; sourceTree = "<group>"; };
 		F731F91526C17F260031F718 /* BombedRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombedRoom.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 				F7549A7826DA31F9005ECBD4 /* Concrete Builder */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		F73082F626DE80E5008C3B5D /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				F73082F726DE8102008C3B5D /* Singleton.swift */,
+			);
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 		F731F91226C17DAB0031F718 /* BombedMaze */ = {
@@ -304,6 +314,7 @@
 		F7FD439726BD7B1900173259 /* DesignPatternProject */ = {
 			isa = PBXGroup;
 			children = (
+				F73082F626DE80E5008C3B5D /* Singleton */,
 				F7FD439826BD7B1900173259 /* AppDelegate.swift */,
 				F7FD439A26BD7B1900173259 /* SceneDelegate.swift */,
 				F7FD439C26BD7B1900173259 /* ViewController.swift */,
@@ -517,6 +528,7 @@
 				F7549A8B26DA35C7005ECBD4 /* HardcoreRoom.swift in Sources */,
 				F7549A8926DA35BF005ECBD4 /* HardcoreDoor.swift in Sources */,
 				F731F91626C17F260031F718 /* BombedRoom.swift in Sources */,
+				F73082F826DE8102008C3B5D /* Singleton.swift in Sources */,
 				F7549A8526DA32A0005ECBD4 /* HardcoreMazeCreator.swift in Sources */,
 				F7D0E7CB26D3F76E003FF030 /* EnchantedWall.swift in Sources */,
 				F7FD43F026BD90AE00173259 /* MazeFactory.swift in Sources */,

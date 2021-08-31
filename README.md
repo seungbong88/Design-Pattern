@@ -447,7 +447,27 @@ public class MazeGame {
      }
      ```
 
-     
 
 
+
+
+### 4. 프로토타입 패턴
+
+
+
+
+
+### 5. 싱글톤 패턴
+
+```swift
+class Singleton {  
+  var singleton: Singleton?
+  var shared: Singleton {
+    if singleton == nil {
+      singleton = Singleton()
+    }
+    return singleton!
+  }
+}
+```
 
