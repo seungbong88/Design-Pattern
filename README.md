@@ -2,6 +2,8 @@
 
 
 
+> 객체 생성 관련 패턴
+
 ### 1. 싱글톤 패턴
 
 - 인스턴스를 오직 한 개만 제공하여 글로벌하게 접근하는 클래스
@@ -14,7 +16,7 @@
 
 - 클래스 내에 private 생성자를 만들어 밖에서 인스턴스를 만들 수 없도록 한다.
 
-- 내가 알 던 싱글톤 사용 법
+- 내가 알던 싱글톤 사용 법
 
   ```swift
   class Settings {
@@ -165,4 +167,45 @@
          
 
 - 즉, 비용이 많이 들지 않은 경우에는 이른 초기화방법을 사용하는 것이 가장 깔끔한 방법인 것 같다. 객체 초기 생성에 비용이 많이 드는 경우에는 Static Inner Class 를 사용하면 좋을 것 같다.
+
+
+
+### 2. 팩토리 메서드 패턴
+
+구체적으로 어떤 인스턴스를 만들지를 서브클래스가 정하는 방법
+
+
+
+- 생성 방법  : *"확장에는 열려있고, 변경에는 닫혀있어야 한다."*
+
+  - Abstract Creator / Concrete Creator
+    - ShipFactory / BlackFactory, WhiteFactory
+
+  - Abstract Product / Concrete Product
+    - Ship / BlackShip, WhiteShip
+
+
+
+### 3. 빌더 패턴
+
+동일한 프로세스를 거쳐 다양한 구성의 인스턴스를 만드는 방법
+
+- 복잡한 객체를 만드는 프로세스를 독립적으로 분리할 수 있음
+
+- Builder / (optioanl) ConcreteBuilder
+
+  Director
+
+  Product
+
+  Client
+
+- Client는 Director를 통해 Builder 패턴을 이용하여 Product를 생성
+
+- java의 사용 예
+  - StringBuilder, StreamBuilder
+
+
+
+### 프로토타입 패턴
 
