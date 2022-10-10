@@ -12,7 +12,7 @@ class Settings {
     
     static var instance: Settings?
     
-    static var getInstacne: Settings {
+    static var getInstance: Settings {
         if instance == nil {
             instance = Settings()
         }
@@ -28,7 +28,7 @@ class Settings2 {
     
     static var instance = Settings2()
     
-    static var getInstacne: Settings2 {
+    static var getInstance: Settings2 {
         return instance
     }
     
@@ -91,7 +91,7 @@ class Settings5 {
         static var instance = Settings5()
     }
     
-    static var getInstace: Settings5 {
+    static var getInstance: Settings5 {
         return SettingsHolder.instance
     }
     
