@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        singletonTest()
     }
     
     private func singletonTest() {
@@ -21,6 +20,16 @@ class ViewController: UIViewController {
         print(Settings3.getInstance === Settings3.getInstance)
         print(Settings4.getInstance === Settings4.getInstance)
         print(Settings5.getInstance === Settings5.getInstance)
+    }
+    
+    private func prototypeTest() {
+        let client = PrototypeClient()
+        client.createIssue()
+    }
+    
+    private func adapterText() {
+        let adaptorApp = AdapterApp()
+        adaptorApp.start()
     }
 }
 

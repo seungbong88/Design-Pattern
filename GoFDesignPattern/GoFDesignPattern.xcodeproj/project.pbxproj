@@ -7,10 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0827CA290AAEA2008167A7 /* OtherUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0827C9290AAEA2008167A7 /* OtherUser.swift */; };
+		CB0827CC290AAF1D008167A7 /* OtherUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0827CB290AAF1D008167A7 /* OtherUserService.swift */; };
+		CB0827CE290AAFB7008167A7 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0827CD290AAFB7008167A7 /* LoginHandler.swift */; };
+		CB0827D0290AB1B4008167A7 /* OtherUserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0827CF290AB1B4008167A7 /* OtherUserAdapter.swift */; };
+		CB0827D2290AB566008167A7 /* OtherUserServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0827D1290AB566008167A7 /* OtherUserServiceAdapter.swift */; };
+		CB0827D8290AB840008167A7 /* AdapterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0827D7290AB840008167A7 /* AdapterApp.swift */; };
 		CB1E91B228F4314E00CFECBD /* TourPlanBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91B128F4314E00CFECBD /* TourPlanBuilder.swift */; };
 		CB1E91B628F431B900CFECBD /* DefaultTourPalnBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91B528F431B900CFECBD /* DefaultTourPalnBuilder.swift */; };
 		CB1E91B928F431C500CFECBD /* TourPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91B828F431C500CFECBD /* TourPlan.swift */; };
 		CB1E91BC28F4367D00CFECBD /* TourDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91BB28F4367D00CFECBD /* TourDirector.swift */; };
+		CB1E91C128F4866300CFECBD /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91C028F4866300CFECBD /* GithubRepository.swift */; };
+		CB1E91C328F4866B00CFECBD /* GithubIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91C228F4866B00CFECBD /* GithubIssue.swift */; };
+		CB1E91C528F486B800CFECBD /* PrototypeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91C428F486B800CFECBD /* PrototypeClient.swift */; };
+		CBA6D63D290AA60C00877E54 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA6D63C290AA60C00877E54 /* Account.swift */; };
+		CBA6D63F290AA61200877E54 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA6D63E290AA61200877E54 /* AccountService.swift */; };
 		CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */; };
 		CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */; };
 		CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4B128F40CF700D6C36B /* ViewController.swift */; };
@@ -21,10 +32,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB0827C9290AAEA2008167A7 /* OtherUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUser.swift; sourceTree = "<group>"; };
+		CB0827CB290AAF1D008167A7 /* OtherUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserService.swift; sourceTree = "<group>"; };
+		CB0827CD290AAFB7008167A7 /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
+		CB0827CF290AB1B4008167A7 /* OtherUserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserAdapter.swift; sourceTree = "<group>"; };
+		CB0827D1290AB566008167A7 /* OtherUserServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserServiceAdapter.swift; sourceTree = "<group>"; };
+		CB0827D7290AB840008167A7 /* AdapterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterApp.swift; sourceTree = "<group>"; };
 		CB1E91B128F4314E00CFECBD /* TourPlanBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourPlanBuilder.swift; sourceTree = "<group>"; };
 		CB1E91B528F431B900CFECBD /* DefaultTourPalnBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTourPalnBuilder.swift; sourceTree = "<group>"; };
 		CB1E91B828F431C500CFECBD /* TourPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourPlan.swift; sourceTree = "<group>"; };
 		CB1E91BB28F4367D00CFECBD /* TourDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDirector.swift; sourceTree = "<group>"; };
+		CB1E91C028F4866300CFECBD /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
+		CB1E91C228F4866B00CFECBD /* GithubIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubIssue.swift; sourceTree = "<group>"; };
+		CB1E91C428F486B800CFECBD /* PrototypeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeClient.swift; sourceTree = "<group>"; };
+		CBA6D63C290AA60C00877E54 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CBA6D63E290AA61200877E54 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		CBDEA4AA28F40CF700D6C36B /* GoFDesignPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFDesignPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,14 +69,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB1E91AF28F42F4C00CFECBD /* BuilderPattern */ = {
+		CB0827D3290AB7EF008167A7 /* Adapter Object */ = {
+			isa = PBXGroup;
+			children = (
+				CB0827CF290AB1B4008167A7 /* OtherUserAdapter.swift */,
+				CB0827D1290AB566008167A7 /* OtherUserServiceAdapter.swift */,
+			);
+			path = "Adapter Object";
+			sourceTree = "<group>";
+		};
+		CB0827D5290AB808008167A7 /* Innter Interface */ = {
+			isa = PBXGroup;
+			children = (
+				CBA6D63C290AA60C00877E54 /* Account.swift */,
+				CBA6D63E290AA61200877E54 /* AccountService.swift */,
+				CB0827D3290AB7EF008167A7 /* Adapter Object */,
+			);
+			path = "Innter Interface";
+			sourceTree = "<group>";
+		};
+		CB0827D6290AB813008167A7 /* Other Interface */ = {
+			isa = PBXGroup;
+			children = (
+				CB0827C9290AAEA2008167A7 /* OtherUser.swift */,
+				CB0827CB290AAF1D008167A7 /* OtherUserService.swift */,
+				CB0827CD290AAFB7008167A7 /* LoginHandler.swift */,
+			);
+			path = "Other Interface";
+			sourceTree = "<group>";
+		};
+		CB1E91AF28F42F4C00CFECBD /* Builder */ = {
 			isa = PBXGroup;
 			children = (
 				CB1E91B728F431C000CFECBD /* Product */,
 				CB1E91B328F4318F00CFECBD /* Builder */,
 				CB1E91BA28F4367600CFECBD /* Director */,
 			);
-			path = BuilderPattern;
+			path = Builder;
 			sourceTree = "<group>";
 		};
 		CB1E91B328F4318F00CFECBD /* Builder */ = {
@@ -82,6 +133,44 @@
 			path = Director;
 			sourceTree = "<group>";
 		};
+		CB1E91BF28F485E300CFECBD /* Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				CB1E91C028F4866300CFECBD /* GithubRepository.swift */,
+				CB1E91C228F4866B00CFECBD /* GithubIssue.swift */,
+				CB1E91C428F486B800CFECBD /* PrototypeClient.swift */,
+			);
+			path = Prototype;
+			sourceTree = "<group>";
+		};
+		CBA6D638290AA13000877E54 /* Creation Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				CBDEA4C128F40F7700D6C36B /* Singleton */,
+				CB1E91AF28F42F4C00CFECBD /* Builder */,
+				CB1E91BF28F485E300CFECBD /* Prototype */,
+			);
+			path = "Creation Pattern";
+			sourceTree = "<group>";
+		};
+		CBA6D639290AA13A00877E54 /* Structure Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				CBA6D63A290AA14300877E54 /* Adapter */,
+			);
+			path = "Structure Pattern";
+			sourceTree = "<group>";
+		};
+		CBA6D63A290AA14300877E54 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				CB0827D6290AB813008167A7 /* Other Interface */,
+				CB0827D5290AB808008167A7 /* Innter Interface */,
+				CB0827D7290AB840008167A7 /* AdapterApp.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
 		CBDEA4A128F40CF700D6C36B = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +190,8 @@
 		CBDEA4AC28F40CF700D6C36B /* GoFDesignPattern */ = {
 			isa = PBXGroup;
 			children = (
-				CB1E91AF28F42F4C00CFECBD /* BuilderPattern */,
-				CBDEA4C128F40F7700D6C36B /* SingletonPattern */,
+				CBA6D638290AA13000877E54 /* Creation Pattern */,
+				CBA6D639290AA13A00877E54 /* Structure Pattern */,
 				CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */,
 				CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */,
 				CBDEA4B128F40CF700D6C36B /* ViewController.swift */,
@@ -114,12 +203,12 @@
 			path = GoFDesignPattern;
 			sourceTree = "<group>";
 		};
-		CBDEA4C128F40F7700D6C36B /* SingletonPattern */ = {
+		CBDEA4C128F40F7700D6C36B /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
 				CBDEA4C228F40F8700D6C36B /* Settings.swift */,
 			);
-			path = SingletonPattern;
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,11 +283,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1E91C128F4866300CFECBD /* GithubRepository.swift in Sources */,
+				CB0827D2290AB566008167A7 /* OtherUserServiceAdapter.swift in Sources */,
+				CB0827CA290AAEA2008167A7 /* OtherUser.swift in Sources */,
 				CB1E91B928F431C500CFECBD /* TourPlan.swift in Sources */,
 				CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */,
+				CB0827CE290AAFB7008167A7 /* LoginHandler.swift in Sources */,
+				CBA6D63F290AA61200877E54 /* AccountService.swift in Sources */,
+				CB0827D8290AB840008167A7 /* AdapterApp.swift in Sources */,
 				CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */,
+				CB1E91C528F486B800CFECBD /* PrototypeClient.swift in Sources */,
+				CBA6D63D290AA60C00877E54 /* Account.swift in Sources */,
 				CB1E91BC28F4367D00CFECBD /* TourDirector.swift in Sources */,
+				CB0827CC290AAF1D008167A7 /* OtherUserService.swift in Sources */,
 				CB1E91B628F431B900CFECBD /* DefaultTourPalnBuilder.swift in Sources */,
+				CB0827D0290AB1B4008167A7 /* OtherUserAdapter.swift in Sources */,
+				CB1E91C328F4866B00CFECBD /* GithubIssue.swift in Sources */,
 				CBDEA4C328F40F8700D6C36B /* Settings.swift in Sources */,
 				CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */,
 				CB1E91B228F4314E00CFECBD /* TourPlanBuilder.swift in Sources */,
