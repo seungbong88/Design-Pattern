@@ -6,7 +6,7 @@
 
 
 
-### 1. 싱글톤 패턴
+### 1. 싱글톤 패턴 - Singleton Pattern
 
 인스턴스를 오직 한 개만 제공하여 글로벌하게 접근하는 클래스
 
@@ -172,17 +172,17 @@
 
 
 
-### 2. 팩토리 메소드 패턴
+### 2. 팩토리 메소드 패턴 - Factory Method Pattern
 
 구체적으로 어떤 인스턴스를 만들지를 서브클래스에서 정하는 것
 
 
 
-### 3. 빌더 패턴
+### 3. 빌더 패턴 - Builder Pattern
 
 
 
-### 4. 프로토타입 패턴
+### 4. 프로토타입 패턴 - Prototype Pattern
 
 
 
@@ -192,7 +192,7 @@
 
 
 
-### 1. 어댑터(Adapter) 패턴
+### 1. 어댑터 패턴 - Adapter Pattern
 
 1. 개념
 
@@ -203,20 +203,16 @@
 
      - 패키징 되어있는 라이브러리처럼 수정이 불가능한 경우에 별도의 어댑터 객체를 생성하여 수정할 수 있다.
 
-2. 장단점
+2. 장점
 
-   - 장점
-     1. 기존 코드 (상이한 다른 인터페이스 객체)를 변경하지 않고 재사용할 수 있다.
-        - 변화에는 닫혀있고, 확장에는 열려있다는 객체지향 원칙을 지킬 수 있음
-     2. 기존 코드가 하던 일고, 새로운 인터페이스와 연결하는 클래스를 각각 분리하여 관리할 수 있다.
-        - 단일 책임의 원칙을 지킬 수 있음
-
-   - 단점
-     - 클래스가 복잡해질 수 있음
+   1. 기존 코드 (상이한 다른 인터페이스 객체)를 변경하지 않고 재사용할 수 있다.
+      - 변화에는 닫혀있고, 확장에는 열려있다는 객체지향 원칙을 지킬 수 있음
+   2. 기존 코드가 하던 일고, 새로운 인터페이스와 연결하는 클래스를 각각 분리하여 관리할 수 있다.
+      - 단일 책임의 원칙을 지킬 수 있음
 
 
 
-### 2. 브릿지 패턴
+### 2. 브릿지 패턴 - Bridge Pattern
 
 1. 개념
 
@@ -253,7 +249,7 @@
 
 3. 역할
 
-   ![BridgePattern](./images/BridgePattern.png)
+   <img src="./images/BridgePattern.png" alt="CompositePattern" style="zoom:40%;" />
 
    - **Abstraction**(Champion) : 최상위 클래스. 추상 개념에 대한 인터페이스를 제공하고, 객체 구현자(implementor) 에 대한 참조자를 관리한다.
    - **RefinedAbstraction**(Skin) : 추상적 개념에 정의된 인터페이스를 *확장*하는 역할을 한다.
@@ -262,9 +258,7 @@
 
    Abstraction 과 Implementor 만 있었던 관계에서 RefiendAbstraction을 추가하여 확장에 용이하도록 한 것이고, 인터페이스의 공통된 영역만 구현한 것이 Implementor, 상세화한 것이 CompleteImplementor 로 보면 되는 듯 하다.
 
-3. 장단점
-
-   장점
+3. 장점
 
    - 추상적인 코드(abstract)를 구체적인 코드(concrete) 변경없이도 독립적으로 확장할 수 있다.
 
@@ -274,9 +268,138 @@
 
 
 
-### 3. 컴포짓 패턴
+### 3. 컴포짓(복합체) 패턴 - Composite Pattern
 
+1. 개념
 
+   - 트리구조에서 주로 쓰이며, 사용자 입장에서 구조에 상관없이 내부에 있는 객체에 접근할 수 있도록 하는 방법
+   - 사용자(Client) 입장에서 전체나 부분을 구분하지 않고 모두 동일한 컴포넌트로 인식할 수 있는 계층구조를 만든다. (Part-Whole Hierachy)
+
+2. 역할
+
+   <img src="./images/CompositePattern.png" alt="CompositePattern" style="zoom:30%;" />
+
+   - **Component** : 집합 관계에 정의될 모든 객체에 대한 인터페이를 정의한다. 실제 구현할 객체에서 공통적으로 사용할 공통 요소, 행동을 정의한다. 필요하다면 인터페이스를 구현한다.
+   - **Leaf** : 서브클래스가 없는 최하위 클래스. 객체의 요소 및 행동을 구현한다.
+   - **Composite** : 서브클래스가 있는 클래스. 객체의 요소 및 행동을 구현한다.
+   - **Client** : Component 인터페이스를 통해 복합 구조 내의 객체들에 접근한다.
+
+3. 구현
+
+   예시 : 아이템과 아이템을 보관하는 가방 객체가 있고, 아이템의 가격과 가방에 들어있는 모든 아이템의 가격을 가져오는 인터페이스를 만든다.
+
+   - AS-IS 
+
+     ```swift
+     class CompositeApp {
+         func start() {
+             let bluePortion = Item(name: "파란물약", price: 60)
+             let infinityGauntlet = Item(name: "인피니티 건틀릿", price: 200)
+             
+             let bag = Bag()
+             bag.addItem(bluePortion)
+             bag.addItem(infinityGauntlet)
+             
+             printPrice(item: bluePortion)
+             printPrice(item: infinityGauntlet)
+             printPrice(bag: bag)
+         }
+       
+       	func printPrice(item: Item) {
+             print(item.price)
+         }
+         
+         func printPrice(bag: Bag) {
+             print(bag.items.reduce(0, { return $0 + $1.price }))
+         }
+     }
+     ```
+
+     - 객체지향 측면에서 사용자가 가방의 모든 아이템을 조회해서 값을 얻어오는 것까지 접근할 필요가 없고, 종류에 상관없이 가격만 가져오면 되기 때문에 수정이 필요하다.
+
+   - TO-BE
+
+     ```swift
+     // 1. Component
+     protocol Component {
+         func getPrice() -> Int
+     }
+     ```
+
+     - 공통 인터페이스인 Component 를 추가해준다.
+
+     ```swift
+     // 2. Composite
+     class Bag: Component {
+         private var items: [Component] = []
+     
+         func getPrice() -> Int {
+             return items.reduce(0, { return $0 + $1.getPrice() })
+         }
+     }
+     ```
+
+     - 하위 클래스인 Bag을 구성요소로 가지는 복합체인 Bag을 구현해준다.
+     - 이때 아이템은 Item 이 아닌 Component 객체로 구현해준다. 서브클래스를 순회하여 가격을 가져오면 되므로 공통인터페이스인 getPrice를 이용해 가격을 가져오는 getPrice 함수를 구현한다.
+
+     ```swift
+     
+     // 3. Leaf
+     class Item: Component {
+         var name: String
+         private var price: Int
+         
+         init(name: String, price: Int) {
+             self.name = name
+             self.price = price
+         }
+         
+         func getPrice() -> Int {
+             return self.price
+         }
+     }
+     ```
+
+     - Leaf 에서는 위와 같이 공통 메서드인 getPrice()  를 구현해준다.
+
+     ```swift
+     // 4. Client
+     class CompositeApp {
+         func start() {
+             let bluePortion = Item(name: "파란물약", price: 60)
+             let infinityGauntlet = Item(name: "인피니티 건틀릿", price: 200)
+             
+             let bag = Bag()
+             bag.addItem(bluePortion)
+             bag.addItem(infinityGauntlet)
+             
+             printPrice(component: bluePortion)
+             printPrice(component: infinityGauntlet)
+             printPrice(component: bag)
+         }
+       
+         // 추상인터페이스인 Component를 파라미터로 받는다.
+         func printPrice(component: Component) {
+             print(component.getPrice())
+         }
+     }
+     ```
+
+     - 사용자는 트리구조에 대한 추가적인 정보를 알 필요없이 공통 인터페이스인 getPrice() 를 이용해 값을 얻어온다.
+
+4. 장단점
+
+   - 장점
+     - 복잡한 트리구조를 편하게 사용할 수 있다.
+     - 다형성과 재귀를 활용할 수 있다.
+     - 클라이언트 코드를 변경하지 않고 새로운 앨리먼트 타입을 추가할 수 있다.
+       - 새로운 타입의 Leaf, Composite이 추가되더라도 클라이언트 코드(`getPrice()`)는 바뀌지 않는다.
+       - getPrice를 가지는 새로운 객체가 추가되더라도 기존 코드를 수정할 필요 없이 확장이 가능하다 (Open/Closed Principle)
+   - 단점
+     - 공통 인터페이스를 정의하여 트리를 만들어야 하므로 지나치게 일반화해야 하는 경우도 생길 수 있다.
+       - 추상화된 타입이 아닌 구체 타입에 접근해야 하는 경우에 타입을 체크하는 수고로움이 있는 경우에는 컴포짓패턴을 사용하는 것이 맞는지 한 번 더 고려해봐야 한다.
+
+   
 
 ### 4. 데코레이터 패턴
 
