@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bridgeTest()
     }
     
     private func singletonTest() {
@@ -27,9 +28,14 @@ class ViewController: UIViewController {
         client.createIssue()
     }
     
-    private func adapterText() {
+    private func adapterTest() {
         let adaptorApp = AdapterApp()
         adaptorApp.start()
+    }
+    
+    private func bridgeTest() {
+        let bridgeApp = BridgeApp()
+        bridgeApp.start()
     }
 }
 

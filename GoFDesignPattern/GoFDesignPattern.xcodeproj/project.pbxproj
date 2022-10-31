@@ -22,6 +22,20 @@
 		CB1E91C528F486B800CFECBD /* PrototypeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91C428F486B800CFECBD /* PrototypeClient.swift */; };
 		CBA6D63D290AA60C00877E54 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA6D63C290AA60C00877E54 /* Account.swift */; };
 		CBA6D63F290AA61200877E54 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA6D63E290AA61200877E54 /* AccountService.swift */; };
+		CBA795F9290FBBEA004BBE05 /* Champion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA795F8290FBBEA004BBE05 /* Champion.swift */; };
+		CBA795FB290FBC52004BBE05 /* 좀비누누와일럼프.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA795FA290FBC52004BBE05 /* 좀비누누와일럼프.swift */; };
+		CBA795FD290FBC58004BBE05 /* 좀비카이사.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA795FC290FBC58004BBE05 /* 좀비카이사.swift */; };
+		CBA795FF290FBC62004BBE05 /* 크리스마스누누와윌럼프.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA795FE290FBC62004BBE05 /* 크리스마스누누와윌럼프.swift */; };
+		CBA79601290FBC70004BBE05 /* 크리스마스카이사.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79600290FBC70004BBE05 /* 크리스마스카이사.swift */; };
+		CBA79604290FBD01004BBE05 /* DefaultChampion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79603290FBD01004BBE05 /* DefaultChampion.swift */; };
+		CBA79606290FBD06004BBE05 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79605290FBD06004BBE05 /* Skin.swift */; };
+		CBA7960A290FBDCB004BBE05 /* 누누와윌럼프.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79609290FBDCB004BBE05 /* 누누와윌럼프.swift */; };
+		CBA7960C290FBE23004BBE05 /* ChristmasSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7960B290FBE23004BBE05 /* ChristmasSkin.swift */; };
+		CBA7960E290FBE44004BBE05 /* ZombieSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7960D290FBE44004BBE05 /* ZombieSkin.swift */; };
+		CBA79610290FBF05004BBE05 /* BridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7960F290FBF05004BBE05 /* BridgeApp.swift */; };
+		CBA79614290FBFD7004BBE05 /* 카이사.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79613290FBFD7004BBE05 /* 카이사.swift */; };
+		CBA79616290FC0E8004BBE05 /* 좀비케인.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79615290FC0E8004BBE05 /* 좀비케인.swift */; };
+		CBA79618290FC115004BBE05 /* 크리스마스브라움.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79617290FC115004BBE05 /* 크리스마스브라움.swift */; };
 		CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */; };
 		CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */; };
 		CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4B128F40CF700D6C36B /* ViewController.swift */; };
@@ -47,6 +61,20 @@
 		CB1E91C428F486B800CFECBD /* PrototypeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeClient.swift; sourceTree = "<group>"; };
 		CBA6D63C290AA60C00877E54 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CBA6D63E290AA61200877E54 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		CBA795F8290FBBEA004BBE05 /* Champion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Champion.swift; sourceTree = "<group>"; };
+		CBA795FA290FBC52004BBE05 /* 좀비누누와일럼프.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "좀비누누와일럼프.swift"; sourceTree = "<group>"; };
+		CBA795FC290FBC58004BBE05 /* 좀비카이사.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "좀비카이사.swift"; sourceTree = "<group>"; };
+		CBA795FE290FBC62004BBE05 /* 크리스마스누누와윌럼프.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "크리스마스누누와윌럼프.swift"; sourceTree = "<group>"; };
+		CBA79600290FBC70004BBE05 /* 크리스마스카이사.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "크리스마스카이사.swift"; sourceTree = "<group>"; };
+		CBA79603290FBD01004BBE05 /* DefaultChampion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChampion.swift; sourceTree = "<group>"; };
+		CBA79605290FBD06004BBE05 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
+		CBA79609290FBDCB004BBE05 /* 누누와윌럼프.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "누누와윌럼프.swift"; sourceTree = "<group>"; };
+		CBA7960B290FBE23004BBE05 /* ChristmasSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasSkin.swift; sourceTree = "<group>"; };
+		CBA7960D290FBE44004BBE05 /* ZombieSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZombieSkin.swift; sourceTree = "<group>"; };
+		CBA7960F290FBF05004BBE05 /* BridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeApp.swift; sourceTree = "<group>"; };
+		CBA79613290FBFD7004BBE05 /* 카이사.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "카이사.swift"; sourceTree = "<group>"; };
+		CBA79615290FC0E8004BBE05 /* 좀비케인.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "좀비케인.swift"; sourceTree = "<group>"; };
+		CBA79617290FC115004BBE05 /* 크리스마스브라움.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "크리스마스브라움.swift"; sourceTree = "<group>"; };
 		CBDEA4AA28F40CF700D6C36B /* GoFDesignPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFDesignPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				CBA6D63A290AA14300877E54 /* Adapter */,
+				CBA795F6290FBBD2004BBE05 /* Bridge */,
 			);
 			path = "Structure Pattern";
 			sourceTree = "<group>";
@@ -169,6 +198,59 @@
 				CB0827D7290AB840008167A7 /* AdapterApp.swift */,
 			);
 			path = Adapter;
+			sourceTree = "<group>";
+		};
+		CBA795F6290FBBD2004BBE05 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				CBA7960F290FBF05004BBE05 /* BridgeApp.swift */,
+				CBA795F8290FBBEA004BBE05 /* Champion.swift */,
+				CBA795F7290FBBDA004BBE05 /* AS-IS */,
+				CBA79602290FBCF5004BBE05 /* TO-BE */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		CBA795F7290FBBDA004BBE05 /* AS-IS */ = {
+			isa = PBXGroup;
+			children = (
+				CBA795FE290FBC62004BBE05 /* 크리스마스누누와윌럼프.swift */,
+				CBA79600290FBC70004BBE05 /* 크리스마스카이사.swift */,
+				CBA795FA290FBC52004BBE05 /* 좀비누누와일럼프.swift */,
+				CBA795FC290FBC58004BBE05 /* 좀비카이사.swift */,
+				CBA79615290FC0E8004BBE05 /* 좀비케인.swift */,
+				CBA79617290FC115004BBE05 /* 크리스마스브라움.swift */,
+			);
+			path = "AS-IS";
+			sourceTree = "<group>";
+		};
+		CBA79602290FBCF5004BBE05 /* TO-BE */ = {
+			isa = PBXGroup;
+			children = (
+				CBA79611290FBF40004BBE05 /* Abstract */,
+				CBA79612290FBF91004BBE05 /* Concrete */,
+			);
+			path = "TO-BE";
+			sourceTree = "<group>";
+		};
+		CBA79611290FBF40004BBE05 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				CBA79605290FBD06004BBE05 /* Skin.swift */,
+				CBA79603290FBD01004BBE05 /* DefaultChampion.swift */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		CBA79612290FBF91004BBE05 /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				CBA7960B290FBE23004BBE05 /* ChristmasSkin.swift */,
+				CBA7960D290FBE44004BBE05 /* ZombieSkin.swift */,
+				CBA79609290FBDCB004BBE05 /* 누누와윌럼프.swift */,
+				CBA79613290FBFD7004BBE05 /* 카이사.swift */,
+			);
+			path = Concrete;
 			sourceTree = "<group>";
 		};
 		CBDEA4A128F40CF700D6C36B = {
@@ -283,25 +365,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA795F9290FBBEA004BBE05 /* Champion.swift in Sources */,
 				CB1E91C128F4866300CFECBD /* GithubRepository.swift in Sources */,
 				CB0827D2290AB566008167A7 /* OtherUserServiceAdapter.swift in Sources */,
 				CB0827CA290AAEA2008167A7 /* OtherUser.swift in Sources */,
 				CB1E91B928F431C500CFECBD /* TourPlan.swift in Sources */,
 				CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */,
+				CBA7960A290FBDCB004BBE05 /* 누누와윌럼프.swift in Sources */,
+				CBA79618290FC115004BBE05 /* 크리스마스브라움.swift in Sources */,
 				CB0827CE290AAFB7008167A7 /* LoginHandler.swift in Sources */,
+				CBA795FB290FBC52004BBE05 /* 좀비누누와일럼프.swift in Sources */,
 				CBA6D63F290AA61200877E54 /* AccountService.swift in Sources */,
 				CB0827D8290AB840008167A7 /* AdapterApp.swift in Sources */,
 				CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */,
+				CBA79616290FC0E8004BBE05 /* 좀비케인.swift in Sources */,
+				CBA795FF290FBC62004BBE05 /* 크리스마스누누와윌럼프.swift in Sources */,
 				CB1E91C528F486B800CFECBD /* PrototypeClient.swift in Sources */,
 				CBA6D63D290AA60C00877E54 /* Account.swift in Sources */,
+				CBA79601290FBC70004BBE05 /* 크리스마스카이사.swift in Sources */,
+				CBA79604290FBD01004BBE05 /* DefaultChampion.swift in Sources */,
 				CB1E91BC28F4367D00CFECBD /* TourDirector.swift in Sources */,
 				CB0827CC290AAF1D008167A7 /* OtherUserService.swift in Sources */,
 				CB1E91B628F431B900CFECBD /* DefaultTourPalnBuilder.swift in Sources */,
+				CBA795FD290FBC58004BBE05 /* 좀비카이사.swift in Sources */,
+				CBA7960C290FBE23004BBE05 /* ChristmasSkin.swift in Sources */,
+				CBA79606290FBD06004BBE05 /* Skin.swift in Sources */,
 				CB0827D0290AB1B4008167A7 /* OtherUserAdapter.swift in Sources */,
 				CB1E91C328F4866B00CFECBD /* GithubIssue.swift in Sources */,
 				CBDEA4C328F40F8700D6C36B /* Settings.swift in Sources */,
 				CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */,
 				CB1E91B228F4314E00CFECBD /* TourPlanBuilder.swift in Sources */,
+				CBA79614290FBFD7004BBE05 /* 카이사.swift in Sources */,
+				CBA79610290FBF05004BBE05 /* BridgeApp.swift in Sources */,
+				CBA7960E290FBE44004BBE05 /* ZombieSkin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
