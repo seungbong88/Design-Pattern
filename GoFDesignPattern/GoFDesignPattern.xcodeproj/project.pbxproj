@@ -20,6 +20,10 @@
 		CB1E91C128F4866300CFECBD /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91C028F4866300CFECBD /* GithubRepository.swift */; };
 		CB1E91C328F4866B00CFECBD /* GithubIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91C228F4866B00CFECBD /* GithubIssue.swift */; };
 		CB1E91C528F486B800CFECBD /* PrototypeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E91C428F486B800CFECBD /* PrototypeClient.swift */; };
+		CBA698F32917F03300588EBE /* ASIS_CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA698F22917F03300588EBE /* ASIS_CommentService.swift */; };
+		CBA698F62917F0B100588EBE /* ASIS_TrimmingCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA698F52917F0B100588EBE /* ASIS_TrimmingCommentService.swift */; };
+		CBA698F82917F0BB00588EBE /* ASIS_SpamFilteringCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA698F72917F0BB00588EBE /* ASIS_SpamFilteringCommentService.swift */; };
+		CBA698FA2917F0C600588EBE /* ASIS_TrimFilteringCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA698F92917F0C600588EBE /* ASIS_TrimFilteringCommentService.swift */; };
 		CBA6D63D290AA60C00877E54 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA6D63C290AA60C00877E54 /* Account.swift */; };
 		CBA6D63F290AA61200877E54 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA6D63E290AA61200877E54 /* AccountService.swift */; };
 		CBA795F9290FBBEA004BBE05 /* Champion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA795F8290FBBEA004BBE05 /* Champion.swift */; };
@@ -40,6 +44,12 @@
 		CBA7961D290FCF79004BBE05 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7961C290FCF79004BBE05 /* Bag.swift */; };
 		CBA7961F290FCFB6004BBE05 /* CompositeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7961E290FCFB6004BBE05 /* CompositeApp.swift */; };
 		CBA79621290FD7DB004BBE05 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79620290FD7DB004BBE05 /* Component.swift */; };
+		CBA79624290FE508004BBE05 /* DecoratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79623290FE508004BBE05 /* DecoratorApp.swift */; };
+		CBA79626290FE51F004BBE05 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79625290FE51F004BBE05 /* CommentService.swift */; };
+		CBA7962F290FEAF2004BBE05 /* DefaultCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7962E290FEAF2004BBE05 /* DefaultCommentService.swift */; };
+		CBA79631290FEBE3004BBE05 /* CommentDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79630290FEBE3004BBE05 /* CommentDecorator.swift */; };
+		CBA7963329101B82004BBE05 /* TrimCommentDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7963229101B82004BBE05 /* TrimCommentDecorator.swift */; };
+		CBA7963529101B8D004BBE05 /* SpamFilteringCommentDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7963429101B8D004BBE05 /* SpamFilteringCommentDecorator.swift */; };
 		CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */; };
 		CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */; };
 		CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4B128F40CF700D6C36B /* ViewController.swift */; };
@@ -63,6 +73,10 @@
 		CB1E91C028F4866300CFECBD /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
 		CB1E91C228F4866B00CFECBD /* GithubIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubIssue.swift; sourceTree = "<group>"; };
 		CB1E91C428F486B800CFECBD /* PrototypeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeClient.swift; sourceTree = "<group>"; };
+		CBA698F22917F03300588EBE /* ASIS_CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASIS_CommentService.swift; sourceTree = "<group>"; };
+		CBA698F52917F0B100588EBE /* ASIS_TrimmingCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASIS_TrimmingCommentService.swift; sourceTree = "<group>"; };
+		CBA698F72917F0BB00588EBE /* ASIS_SpamFilteringCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASIS_SpamFilteringCommentService.swift; sourceTree = "<group>"; };
+		CBA698F92917F0C600588EBE /* ASIS_TrimFilteringCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASIS_TrimFilteringCommentService.swift; sourceTree = "<group>"; };
 		CBA6D63C290AA60C00877E54 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CBA6D63E290AA61200877E54 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		CBA795F8290FBBEA004BBE05 /* Champion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Champion.swift; sourceTree = "<group>"; };
@@ -83,6 +97,12 @@
 		CBA7961C290FCF79004BBE05 /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		CBA7961E290FCFB6004BBE05 /* CompositeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeApp.swift; sourceTree = "<group>"; };
 		CBA79620290FD7DB004BBE05 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		CBA79623290FE508004BBE05 /* DecoratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoratorApp.swift; sourceTree = "<group>"; };
+		CBA79625290FE51F004BBE05 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		CBA7962E290FEAF2004BBE05 /* DefaultCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommentService.swift; sourceTree = "<group>"; };
+		CBA79630290FEBE3004BBE05 /* CommentDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDecorator.swift; sourceTree = "<group>"; };
+		CBA7963229101B82004BBE05 /* TrimCommentDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimCommentDecorator.swift; sourceTree = "<group>"; };
+		CBA7963429101B8D004BBE05 /* SpamFilteringCommentDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpamFilteringCommentDecorator.swift; sourceTree = "<group>"; };
 		CBDEA4AA28F40CF700D6C36B /* GoFDesignPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFDesignPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +199,29 @@
 			path = Prototype;
 			sourceTree = "<group>";
 		};
+		CBA698F02917F01800588EBE /* AS-IS */ = {
+			isa = PBXGroup;
+			children = (
+				CBA698F22917F03300588EBE /* ASIS_CommentService.swift */,
+				CBA698F52917F0B100588EBE /* ASIS_TrimmingCommentService.swift */,
+				CBA698F72917F0BB00588EBE /* ASIS_SpamFilteringCommentService.swift */,
+				CBA698F92917F0C600588EBE /* ASIS_TrimFilteringCommentService.swift */,
+			);
+			path = "AS-IS";
+			sourceTree = "<group>";
+		};
+		CBA698F12917F01E00588EBE /* TO-BE */ = {
+			isa = PBXGroup;
+			children = (
+				CBA79625290FE51F004BBE05 /* CommentService.swift */,
+				CBA7962E290FEAF2004BBE05 /* DefaultCommentService.swift */,
+				CBA79630290FEBE3004BBE05 /* CommentDecorator.swift */,
+				CBA7963229101B82004BBE05 /* TrimCommentDecorator.swift */,
+				CBA7963429101B8D004BBE05 /* SpamFilteringCommentDecorator.swift */,
+			);
+			path = "TO-BE";
+			sourceTree = "<group>";
+		};
 		CBA6D638290AA13000877E54 /* Creation Pattern */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +238,7 @@
 				CBA6D63A290AA14300877E54 /* 1. Adapter */,
 				CBA795F6290FBBD2004BBE05 /* 2. Bridge */,
 				CBA79619290FCF25004BBE05 /* 3. Composite */,
+				CBA79622290FE4F2004BBE05 /* 4. Decorator */,
 			);
 			path = "Structure Pattern";
 			sourceTree = "<group>";
@@ -271,6 +315,16 @@
 				CBA7961A290FCF52004BBE05 /* Item.swift */,
 			);
 			path = "3. Composite";
+			sourceTree = "<group>";
+		};
+		CBA79622290FE4F2004BBE05 /* 4. Decorator */ = {
+			isa = PBXGroup;
+			children = (
+				CBA79623290FE508004BBE05 /* DecoratorApp.swift */,
+				CBA698F02917F01800588EBE /* AS-IS */,
+				CBA698F12917F01E00588EBE /* TO-BE */,
+			);
+			path = "4. Decorator";
 			sourceTree = "<group>";
 		};
 		CBDEA4A128F40CF700D6C36B = {
@@ -398,24 +452,34 @@
 				CBA7961D290FCF79004BBE05 /* Bag.swift in Sources */,
 				CBA795FB290FBC52004BBE05 /* 좀비누누와일럼프.swift in Sources */,
 				CBA6D63F290AA61200877E54 /* AccountService.swift in Sources */,
+				CBA79631290FEBE3004BBE05 /* CommentDecorator.swift in Sources */,
 				CBA7961F290FCFB6004BBE05 /* CompositeApp.swift in Sources */,
 				CB0827D8290AB840008167A7 /* AdapterApp.swift in Sources */,
+				CBA7962F290FEAF2004BBE05 /* DefaultCommentService.swift in Sources */,
 				CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */,
 				CBA79616290FC0E8004BBE05 /* 좀비케인.swift in Sources */,
+				CBA698F32917F03300588EBE /* ASIS_CommentService.swift in Sources */,
+				CBA7963529101B8D004BBE05 /* SpamFilteringCommentDecorator.swift in Sources */,
 				CBA795FF290FBC62004BBE05 /* 크리스마스누누와윌럼프.swift in Sources */,
 				CB1E91C528F486B800CFECBD /* PrototypeClient.swift in Sources */,
+				CBA7963329101B82004BBE05 /* TrimCommentDecorator.swift in Sources */,
+				CBA79626290FE51F004BBE05 /* CommentService.swift in Sources */,
 				CBA6D63D290AA60C00877E54 /* Account.swift in Sources */,
 				CBA79601290FBC70004BBE05 /* 크리스마스카이사.swift in Sources */,
 				CBA79604290FBD01004BBE05 /* DefaultChampion.swift in Sources */,
 				CB1E91BC28F4367D00CFECBD /* TourDirector.swift in Sources */,
+				CBA698F82917F0BB00588EBE /* ASIS_SpamFilteringCommentService.swift in Sources */,
+				CBA79624290FE508004BBE05 /* DecoratorApp.swift in Sources */,
 				CB0827CC290AAF1D008167A7 /* OtherUserService.swift in Sources */,
 				CB1E91B628F431B900CFECBD /* DefaultTourPalnBuilder.swift in Sources */,
 				CBA795FD290FBC58004BBE05 /* 좀비카이사.swift in Sources */,
 				CBA7960C290FBE23004BBE05 /* ChristmasSkin.swift in Sources */,
 				CBA79606290FBD06004BBE05 /* Skin.swift in Sources */,
+				CBA698F62917F0B100588EBE /* ASIS_TrimmingCommentService.swift in Sources */,
 				CB0827D0290AB1B4008167A7 /* OtherUserAdapter.swift in Sources */,
 				CB1E91C328F4866B00CFECBD /* GithubIssue.swift in Sources */,
 				CBDEA4C328F40F8700D6C36B /* Settings.swift in Sources */,
+				CBA698FA2917F0C600588EBE /* ASIS_TrimFilteringCommentService.swift in Sources */,
 				CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */,
 				CB1E91B228F4314E00CFECBD /* TourPlanBuilder.swift in Sources */,
 				CBA79621290FD7DB004BBE05 /* Component.swift in Sources */,

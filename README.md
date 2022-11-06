@@ -279,7 +279,7 @@
 
    <img src="./images/CompositePattern.png" alt="CompositePattern" style="zoom:30%;" />
 
-   - **Component** : 집합 관계에 정의될 모든 객체에 대한 인터페이를 정의한다. 실제 구현할 객체에서 공통적으로 사용할 공통 요소, 행동을 정의한다. 필요하다면 인터페이스를 구현한다.
+   - **Component** (interface) : 집합 관계에 정의될 모든 객체에 대한 인터페이를 정의한다. 실제 구현할 객체에서 공통적으로 사용할 공통 요소, 행동을 정의한다. 필요하다면 인터페이스를 구현한다.
    - **Leaf** : 서브클래스가 없는 최하위 클래스. 객체의 요소 및 행동을 구현한다.
    - **Composite** : 서브클래스가 있는 클래스. 객체의 요소 및 행동을 구현한다.
    - **Client** : Component 인터페이스를 통해 복합 구조 내의 객체들에 접근한다.
@@ -401,7 +401,147 @@
 
    
 
-### 4. 데코레이터 패턴
+### 4. 데코레이터(장식자) 패턴  - Decorator Pattern
+
+1. 개념
+   - 객채에 동적으로 새로운 책임을 추가할 수 있게 하는 디자인 패턴
+     - 객체에 추가 기능을 Runtime 에 동적으로 확장할 수 있는 디자인 패턴
+   - 전체 클래스에 새로운 기능을 추가할 필요는 없지만, 개별적인 객체에 새로운 기능을 추가해야할 때 상속으로는 해결하기가 어렵다.
+     - 서브클래스에 각각 다른 기능을 추가한다고 할 때, 다른  두 가지 기능을 동시에 가지는 객체를 만들기 위해서는 또 새로운 클래스를 정의해야 한다.(A기능 클래스, B 기능 클래스, A+B 기능 클래스)
+
+2. 역할
+
+   <img src="./images/DecoratorPattern.png" alt="DecoratorPattern" style="zoom:50%;" />
+
+   - **Component** (*CommentService*) : 동적으로 추가할 서비스를 가질 가능성이 있는 객체들에 대한 <u>인터페이스</u>
+     - 예를 들어 댓글을 추가할 때, 필터링이나 예외처리 등 상황에 따라 다른 기능이 0개 이상으로 필요로 할 때 댓글 추가 기능이 있는 CommentService를 Component로 잡을 수 있다. 
+   - **ConcreteComponent** (*DefaultCommentService*) : 추가적인 서비스가 실제로 정의되어야 할 필요가 있는 객체. Component의 기능을 직접 구현한다.
+   - **Decorator** (CommentDecorator) : Component 객체에 대한 참조자를 관리하면서 Component에 정의된 인터페이스를 만족하도록 인터페이스를 정의하는 역할을 함.
+     - 객체에 대한 참조자를 관리한다는 것은 내부에 Component 타입의 객체를 가지고 있다는 것을 의미한다.
+   - **ConcreteDecorator** (*TrimmingCommentDecorator*, *SpamFilteringCommentDecorator*) : Component에 새롭게 추가할 서비스를 실제로 구현하는 클래스
+     - 실제로 여기서 각각 다른 기능을 정의해준다.
+
+3. 구현
+
+   ```swift
+   // 1. Component
+   protocol CommentService {
+       func addComment(_ comment: String)
+       func printConmments()
+   }
+   ```
+
+   - 다양화될 수 있는 (동적으로 서비스가 추가될 가능성이 있는) 객체에 대한 인터페이스를 정의한다.
+
+   ```swift
+   // 2. Concrete Component
+   class DefaultCommentService: CommentService {
+   
+       var comments: [String] = []
+   
+       func addComment(_ comment: String) {
+           self.comments.append(comment)
+       }
+       
+       func printConmments() {
+           for comment in comments {
+               print(comment)
+           }
+       }
+   }
+   ```
+
+   - Component의 인터페이스를 실제로 구현한다.
+   - 여기에서는 별다른 추가 기능 없이 댓글이 있다면 추가해주는 기능만 구현되어있다.
+
+   ```swift
+   // 3. Decorator
+   class CommentDecorator: CommentService {
+       var commentService: CommentService
+       
+       init(service: CommentService) {
+           self.commentService = service
+       }
+       
+       func addComment(_ comment: String) {
+           commentService.addComment(comment)
+       }
+       
+       func printConmments() {
+           commentService.printConmments()
+       }
+   }
+   ```
+
+   - Component 객체를 가지고 있으며, 이 객체와 기능(Concrete Component에 구현된)을 연결해준다.
+   - 생성자로 Component 를 전달받는다.
+
+   ```swift
+   // 4. ConcreteDecorator
+   class TrimCommentDecorator: CommentDecorator {
+       
+       override func addComment(_ comment: String) {
+           let trimmedComment = comment.replacingOccurrences(of: "...", with: "")
+           commentService.addComment(trimmedComment)
+       }
+   }
+   ```
+
+   ```swift
+   // 4. ConcreteDecorator
+   class SpamFilteringCommentDecorator: CommentDecorator {
+       
+       override func addComment(_ comment: String) {
+           if !comment.contains("http") {
+               commentService.addComment(comment)
+           }
+       }
+   }
+   ```
+
+   - 동적으로 추가될 수 있는 기능들을 구현해준다.
+
+   ```swift
+   var enabledTrimming: Bool = true
+   var enabledSapmFilter: Bool = true
+   
+   func start() {
+   	var commentService: CommentService = DefaultCommentService()
+           
+   	if enabledTrimming {
+   		commentService = TrimCommentDecorator(service: commentService)
+   	}
+           
+   	if enabledSapmFilter {
+       // 생성자 service 에는 TrimCommentDecorator 가 전달됨
+       // 데코레이터가 데코레이터를 감싸는 형태
+   		commentService = SpamFilteringCommentDecorator(service: commentService)
+   	}
+           
+   	commentService.addComment("시선으로부터")
+   	commentService.addComment("정세랑... 장편소설... ...")
+   	commentService.addComment("(주)A에셋 동학농민개미 집중! 삼성 관련 700% 확정주 받기! https://open.kakao.com/o/gNqcCYKe")
+   	commentService.printConmments()
+     
+     // [print]
+     // 시선으로부터
+   	// 정세랑 장편소설 
+   }
+   ```
+
+   - Runtime에 동적으로 다른 서브클래스를 사용할 수 있는 패턴
+   - 상속 없이도 두 가지의 속성(trimming, 스팸 필터링)을 모두 적용할 수 있음
+     - 그 이유는 두 번째 `SpamFilteringCommentDecorator` 생성때 전달되는 service 파라미터가 `TrimCommentDecorator` 이기 때문에, filtering 과 trimming  두 가지 기능을 동시에 수행하는 객체가 만들어진다.
+   - 동일한 인터페이스를 여러 군데에서 상속받는 복잡한 구조로 보이지만, 상황에 따라 유연하게 사용할 수 있다는 특징을 가지고 있는 듯 하다.
+
+4. 장단점
+
+   - 장점
+     - 새로운 클래스를 만들지 않고 기존 기능을 <u>조합하여</u> 사용할 수 있다.
+       - 객체지향 단일 책임의 원칙(본연의 기능만 수행하도록 할 수 있다.)
+     - 런타임에 동적으로 기능을 변경할 수 있다.
+   - 단점
+     - 코드가 복잡해질 수 있다.
 
 
 

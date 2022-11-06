@@ -11,6 +11,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let button = UIButton()
+        button.setTitle("TEST", for: .normal)
+        button.addTarget(self, action: #selector(decorateTest), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(button)
+        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        self.view.backgroundColor = .cyan
     }
     
     private func singletonTest() {
@@ -34,6 +43,11 @@ class ViewController: UIViewController {
     private func bridgeTest() {
         let bridgeApp = BridgeApp()
         bridgeApp.start()
+    }
+    
+    @objc private func decorateTest() {
+        let decoratorApp = DecoratorApp()
+        decoratorApp.start()
     }
 }
 
