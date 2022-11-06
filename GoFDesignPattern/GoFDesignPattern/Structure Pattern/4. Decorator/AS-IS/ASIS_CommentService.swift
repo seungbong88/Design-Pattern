@@ -8,7 +8,7 @@
 import Foundation
 
 class ASIS_CommentService {
-    private var comments: [String] = []
+    var comments: [String] = []
     
     func addComment(_ comment: String) {
         comments.append(comment)

@@ -13,20 +13,28 @@ class DecoratorApp {
     var enabledSapmFilter: Bool = true
     
     func ASIS_start() {
-        let trimmingService = ASIS_TrimmingCommentService()
-        trimmingService.addComment("안녕하세요...")
-        trimmingService.addComment("반갑습니다...")
-        trimmingService.printConmments()
+        var commentService: ASIS_CommentService = ASIS_CommentService()
         
-        let spamFilteringService = ASIS_SpamFilteringCommentService()
-        spamFilteringService.addComment("ㄷH박주1식! 무족권. 먹습니다. 오픈채팅방 http://www.open.kakao.com/oedkL/wkldsdklfoeKKL134")
-        spamFilteringService.printConmments()
+        if enabledTrimming {
+            commentService = ASIS_TrimmingCommentService()
+            commentService.addComment("안녕하세요...")
+            commentService.addComment("반갑습니다...")
+        }
         
-        let trimAndFilteringCommentService = ASIS_TrimmingAndSpamFilteringCommentService()
-        trimAndFilteringCommentService.addComment("안녕하세요...")
-        trimAndFilteringCommentService.addComment("반갑습니다...")
-        trimAndFilteringCommentService.addComment("[긴급] 우체국택배 주소지 오입력으로 확인바랍니다. http://bze.spam123.zzang/dsDW42sdfaDDS")
-        trimAndFilteringCommentService.printConmments()
+        if enabledSapmFilter {
+            commentService = ASIS_SpamFilteringCommentService()
+            commentService.addComment("ㄷH박주1식! 무족권. 먹습니다. 오픈채팅방 http://www.open.kakao.com/oedkL/wkldsdklfoeKKL134")
+            
+        }
+        
+        if enabledTrimming && enabledSapmFilter {
+            commentService = ASIS_TrimmingAndSpamFilteringCommentService()
+            commentService.addComment("안녕하세요...")
+            commentService.addComment("반갑습니다...")
+            commentService.addComment("[긴급] 우체국택배 주소지 오입력으로 확인바랍니다. http://bze.spam123.zzang/dsDW42sdfaDDS")
+        }
+        
+        commentService.printConmments()
     }
     
     func start() {
