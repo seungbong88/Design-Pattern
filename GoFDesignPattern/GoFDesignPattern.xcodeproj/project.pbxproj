@@ -50,6 +50,11 @@
 		CBA79631290FEBE3004BBE05 /* CommentDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA79630290FEBE3004BBE05 /* CommentDecorator.swift */; };
 		CBA7963329101B82004BBE05 /* TrimCommentDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7963229101B82004BBE05 /* TrimCommentDecorator.swift */; };
 		CBA7963529101B8D004BBE05 /* SpamFilteringCommentDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7963429101B8D004BBE05 /* SpamFilteringCommentDecorator.swift */; };
+		CBB283CB2920CE48005A405B /* Americano.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283CA2920CE48005A405B /* Americano.swift */; };
+		CBB283CD2920CEAA005A405B /* DefaultAmericano.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283CC2920CEAA005A405B /* DefaultAmericano.swift */; };
+		CBB283CF2920CEFA005A405B /* AmericanoDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283CE2920CEFA005A405B /* AmericanoDecorator.swift */; };
+		CBB283D12920CF57005A405B /* HazelnutAmericanoDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283D02920CF57005A405B /* HazelnutAmericanoDecorator.swift */; };
+		CBB283D42920D037005A405B /* vanillaAmericanoDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283D32920D037005A405B /* vanillaAmericanoDecorator.swift */; };
 		CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */; };
 		CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */; };
 		CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4B128F40CF700D6C36B /* ViewController.swift */; };
@@ -103,6 +108,11 @@
 		CBA79630290FEBE3004BBE05 /* CommentDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDecorator.swift; sourceTree = "<group>"; };
 		CBA7963229101B82004BBE05 /* TrimCommentDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimCommentDecorator.swift; sourceTree = "<group>"; };
 		CBA7963429101B8D004BBE05 /* SpamFilteringCommentDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpamFilteringCommentDecorator.swift; sourceTree = "<group>"; };
+		CBB283CA2920CE48005A405B /* Americano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Americano.swift; sourceTree = "<group>"; };
+		CBB283CC2920CEAA005A405B /* DefaultAmericano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAmericano.swift; sourceTree = "<group>"; };
+		CBB283CE2920CEFA005A405B /* AmericanoDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanoDecorator.swift; sourceTree = "<group>"; };
+		CBB283D02920CF57005A405B /* HazelnutAmericanoDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HazelnutAmericanoDecorator.swift; sourceTree = "<group>"; };
+		CBB283D32920D037005A405B /* vanillaAmericanoDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vanillaAmericanoDecorator.swift; sourceTree = "<group>"; };
 		CBDEA4AA28F40CF700D6C36B /* GoFDesignPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFDesignPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -323,8 +333,21 @@
 				CBA79623290FE508004BBE05 /* DecoratorApp.swift */,
 				CBA698F02917F01800588EBE /* AS-IS */,
 				CBA698F12917F01E00588EBE /* TO-BE */,
+				CBB283BF2920BCE0005A405B /* Custom */,
 			);
 			path = "4. Decorator";
+			sourceTree = "<group>";
+		};
+		CBB283BF2920BCE0005A405B /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				CBB283CA2920CE48005A405B /* Americano.swift */,
+				CBB283CC2920CEAA005A405B /* DefaultAmericano.swift */,
+				CBB283CE2920CEFA005A405B /* AmericanoDecorator.swift */,
+				CBB283D02920CF57005A405B /* HazelnutAmericanoDecorator.swift */,
+				CBB283D32920D037005A405B /* vanillaAmericanoDecorator.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		CBDEA4A128F40CF700D6C36B = {
@@ -444,6 +467,8 @@
 				CBA7961B290FCF52004BBE05 /* Item.swift in Sources */,
 				CB0827D2290AB566008167A7 /* OtherUserServiceAdapter.swift in Sources */,
 				CB0827CA290AAEA2008167A7 /* OtherUser.swift in Sources */,
+				CBB283CF2920CEFA005A405B /* AmericanoDecorator.swift in Sources */,
+				CBB283CD2920CEAA005A405B /* DefaultAmericano.swift in Sources */,
 				CB1E91B928F431C500CFECBD /* TourPlan.swift in Sources */,
 				CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */,
 				CBA7960A290FBDCB004BBE05 /* 누누와윌럼프.swift in Sources */,
@@ -468,6 +493,7 @@
 				CBA79601290FBC70004BBE05 /* 크리스마스카이사.swift in Sources */,
 				CBA79604290FBD01004BBE05 /* DefaultChampion.swift in Sources */,
 				CB1E91BC28F4367D00CFECBD /* TourDirector.swift in Sources */,
+				CBB283D42920D037005A405B /* vanillaAmericanoDecorator.swift in Sources */,
 				CBA698F82917F0BB00588EBE /* ASIS_SpamFilteringCommentService.swift in Sources */,
 				CBA79624290FE508004BBE05 /* DecoratorApp.swift in Sources */,
 				CB0827CC290AAF1D008167A7 /* OtherUserService.swift in Sources */,
@@ -475,6 +501,7 @@
 				CBA795FD290FBC58004BBE05 /* 좀비카이사.swift in Sources */,
 				CBA7960C290FBE23004BBE05 /* ChristmasSkin.swift in Sources */,
 				CBA79606290FBD06004BBE05 /* Skin.swift in Sources */,
+				CBB283D12920CF57005A405B /* HazelnutAmericanoDecorator.swift in Sources */,
 				CBA698F62917F0B100588EBE /* ASIS_TrimmingCommentService.swift in Sources */,
 				CB0827D0290AB1B4008167A7 /* OtherUserAdapter.swift in Sources */,
 				CB1E91C328F4866B00CFECBD /* GithubIssue.swift in Sources */,
@@ -486,6 +513,7 @@
 				CBA79614290FBFD7004BBE05 /* 카이사.swift in Sources */,
 				CBA79610290FBF05004BBE05 /* BridgeApp.swift in Sources */,
 				CBA7960E290FBE44004BBE05 /* ZombieSkin.swift in Sources */,
+				CBB283CB2920CE48005A405B /* Americano.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

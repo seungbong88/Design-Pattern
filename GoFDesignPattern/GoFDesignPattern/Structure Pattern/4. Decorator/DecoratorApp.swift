@@ -53,4 +53,18 @@ class DecoratorApp {
         commentService.addComment("(주)A에셋 동학농민개미 집중! 삼성 관련 700% 확정주 받기! https://open.kakao.com/o/gNqcCYKe")
         commentService.printConmments()
     }
+    
+    func customExcerciseStart() {
+        var hasHazelnutSyrup: Bool = true
+        var hasVanillaSyrup: Bool = true
+        
+        var americano: Americano = DefaultAmericano()
+        if hasHazelnutSyrup {
+            americano = HazelnutAmericanoDecorator(americano: americano)
+        }
+        if hasVanillaSyrup {
+            americano = VanillaAmericanoDecorator(americano: americano)
+        }
+        print(americano.cost())
+    }
 }

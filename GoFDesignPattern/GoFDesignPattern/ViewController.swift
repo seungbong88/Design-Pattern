@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     @objc private func decorateTest() {
         let decoratorApp = DecoratorApp()
-        decoratorApp.start()
+        decoratorApp.customExcerciseStart()
     }
 }
 
