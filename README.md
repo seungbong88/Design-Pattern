@@ -546,15 +546,51 @@
 
 5. 예제 만들어보기
 
-   - 넣는 재료에 따라 가격이 달라지는 아메리카노 객체 만들기
+   - 넣는 재료에 따라 가격이 달라지는 아메리카노 객체 만들기! 
+   
+     ```swift
+     func customExcerciseStart() {
+             var hasHazelnutSyrup: Bool = true
+             var hasVanillaSyrup: Bool = true
+             
+             var americano: Americano = DefaultAmericano()
+             if hasHazelnutSyrup {
+                 americano = HazelnutAmericanoDecorator(americano: americano)
+             }
+             if hasVanillaSyrup {
+                 americano = VanillaAmericanoDecorator(americano: americano)
+             }
+             print(americano.cost())
+     }
+     ```
+   
+     
 
+### 5. 퍼사드 패턴 - Pacade Pattern
 
+1. 개념
 
-### 5. 퍼사드 패턴
+   - 클라이언트가 알 필요가 없는 세부 내용을 퍼사드(인터페이스) 뒤로 숨겨 복잡한 서브 시스템 의존성을 최소화하는 방법
+     - 클라이언트가 사용해야 하는 복잡한 서브 시스템 의존성을 간단한 인터페이스로 추상화하는 방법
+     - 기능에 대한 인터페이스만 제공하고, 클라이언트가 알 필요가 없는 복잡한 시스템은 사용자가 알 필요 없도록 숨기는 방법 (의존성을 줄이는 방법)
 
+2. 장단점
 
+   - 서브시스템에 대한 의존성을 한 곳으로 모을 수 있다.
+
+     (여러 곳에 있는 의존성을 통일하여 한 곳에서 관리할 수 있다.)
+
+   
 
 ### 6. 플라이웨이트 패턴
+
+1. 개념
+   - 객체를 가볍게 만들어 메모리 사용을 줄이는 패턴
+   - 많은 인스턴스가 생성되는 경우에 메모리를 효율적으로 사용하기 위해 인스턴스를 재사용하는 방법
+     - 자주 변하는 속성과 변하지 않는 속성을 분리하고 재사용하여 메모리 사용을 줄일 수 있다
+     - 객체를 일일이 생성하지 않고, 이미 생성된 객체의 값만 리턴하도록 하는 방법
+2. 특징
+   - 공통적으로 사용하는 속성(변하지 않는 속성)은 immutable 하게 구현하여 다른 곳에서 변경할 수 없도록 한다.
 
 
 

@@ -11,15 +11,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .lightGray
         
-        let button = UIButton()
-        button.setTitle("TEST", for: .normal)
-        button.addTarget(self, action: #selector(decorateTest), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(button)
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        self.view.backgroundColor = .cyan
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        flyweightTest()
     }
     
     private func singletonTest() {
@@ -48,6 +46,11 @@ class ViewController: UIViewController {
     @objc private func decorateTest() {
         let decoratorApp = DecoratorApp()
         decoratorApp.customExcerciseStart()
+    }
+    
+    private func flyweightTest() {
+        let flyweightApp = FlyWeightApp()
+        flyweightApp.start()
     }
 }
 
