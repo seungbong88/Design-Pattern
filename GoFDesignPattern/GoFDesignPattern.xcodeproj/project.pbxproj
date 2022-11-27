@@ -58,6 +58,10 @@
 		CBB283DA2920DF85005A405B /* FlyWeightApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283D92920DF85005A405B /* FlyWeightApp.swift */; };
 		CBB283DE292A1909005A405B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283DD292A1909005A405B /* Character.swift */; };
 		CBB283E0292A19A9005A405B /* FontFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283DF292A19A9005A405B /* FontFactory.swift */; };
+		CBB283E3292A1E68005A405B /* ProxyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283E2292A1E68005A405B /* ProxyApp.swift */; };
+		CBB283E5292A1E6D005A405B /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283E4292A1E6D005A405B /* GameService.swift */; };
+		CBB283E729331CAF005A405B /* RealGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283E629331CAF005A405B /* RealGameService.swift */; };
+		CBB283E929331CDD005A405B /* ProxyGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283E829331CDD005A405B /* ProxyGameService.swift */; };
 		CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */; };
 		CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */; };
 		CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4B128F40CF700D6C36B /* ViewController.swift */; };
@@ -119,6 +123,10 @@
 		CBB283D92920DF85005A405B /* FlyWeightApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyWeightApp.swift; sourceTree = "<group>"; };
 		CBB283DD292A1909005A405B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CBB283DF292A19A9005A405B /* FontFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFactory.swift; sourceTree = "<group>"; };
+		CBB283E2292A1E68005A405B /* ProxyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyApp.swift; sourceTree = "<group>"; };
+		CBB283E4292A1E6D005A405B /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		CBB283E629331CAF005A405B /* RealGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealGameService.swift; sourceTree = "<group>"; };
+		CBB283E829331CDD005A405B /* ProxyGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGameService.swift; sourceTree = "<group>"; };
 		CBDEA4AA28F40CF700D6C36B /* GoFDesignPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFDesignPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +265,7 @@
 				CBA79622290FE4F2004BBE05 /* 4. Decorator */,
 				CBB283D52920DA1C005A405B /* 5. Pacade */,
 				CBB283D82920DF62005A405B /* 6. FlyWeight */,
+				CBB283E1292A1E50005A405B /* 7. Proxy */,
 			);
 			path = "Structure Pattern";
 			sourceTree = "<group>";
@@ -373,6 +382,17 @@
 				CBB283DF292A19A9005A405B /* FontFactory.swift */,
 			);
 			path = "6. FlyWeight";
+			sourceTree = "<group>";
+		};
+		CBB283E1292A1E50005A405B /* 7. Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				CBB283E2292A1E68005A405B /* ProxyApp.swift */,
+				CBB283E4292A1E6D005A405B /* GameService.swift */,
+				CBB283E629331CAF005A405B /* RealGameService.swift */,
+				CBB283E829331CDD005A405B /* ProxyGameService.swift */,
+			);
+			path = "7. Proxy";
 			sourceTree = "<group>";
 		};
 		CBDEA4A128F40CF700D6C36B = {
@@ -492,7 +512,9 @@
 				CBB283DE292A1909005A405B /* Character.swift in Sources */,
 				CBA7961B290FCF52004BBE05 /* Item.swift in Sources */,
 				CB0827D2290AB566008167A7 /* OtherUserServiceAdapter.swift in Sources */,
+				CBB283E729331CAF005A405B /* RealGameService.swift in Sources */,
 				CB0827CA290AAEA2008167A7 /* OtherUser.swift in Sources */,
+				CBB283E5292A1E6D005A405B /* GameService.swift in Sources */,
 				CBB283CF2920CEFA005A405B /* AmericanoDecorator.swift in Sources */,
 				CBB283CD2920CEAA005A405B /* DefaultAmericano.swift in Sources */,
 				CB1E91B928F431C500CFECBD /* TourPlan.swift in Sources */,
@@ -503,10 +525,12 @@
 				CB0827CE290AAFB7008167A7 /* LoginHandler.swift in Sources */,
 				CBA7961D290FCF79004BBE05 /* Bag.swift in Sources */,
 				CBA795FB290FBC52004BBE05 /* 좀비누누와일럼프.swift in Sources */,
+				CBB283E929331CDD005A405B /* ProxyGameService.swift in Sources */,
 				CBA6D63F290AA61200877E54 /* AccountService.swift in Sources */,
 				CBA79631290FEBE3004BBE05 /* CommentDecorator.swift in Sources */,
 				CBA7961F290FCFB6004BBE05 /* CompositeApp.swift in Sources */,
 				CB0827D8290AB840008167A7 /* AdapterApp.swift in Sources */,
+				CBB283E3292A1E68005A405B /* ProxyApp.swift in Sources */,
 				CBA7962F290FEAF2004BBE05 /* DefaultCommentService.swift in Sources */,
 				CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */,
 				CBA79616290FC0E8004BBE05 /* 좀비케인.swift in Sources */,

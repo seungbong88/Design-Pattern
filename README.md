@@ -585,16 +585,138 @@
 ### 6. 플라이웨이트 패턴
 
 1. 개념
+
    - 객체를 가볍게 만들어 메모리 사용을 줄이는 패턴
    - 많은 인스턴스가 생성되는 경우에 메모리를 효율적으로 사용하기 위해 인스턴스를 재사용하는 방법
      - 자주 변하는 속성과 변하지 않는 속성을 분리하고 재사용하여 메모리 사용을 줄일 수 있다
      - 객체를 일일이 생성하지 않고, 이미 생성된 객체의 값만 리턴하도록 하는 방법
+
 2. 특징
+
    - 공통적으로 사용하는 속성(변하지 않는 속성)은 immutable 하게 구현하여 다른 곳에서 변경할 수 없도록 한다.
+
+3. 구현방법`
+
+   ```swift
+   class FlyWeightApp {
+   
+   	func ASIS_start() {
+           let c1 = Character(value: "h", color: .black, font: UIFont(name: "나눔", size: 12)!)
+           let c2 = Character(value: "e", color: .red, font: UIFont(name: "나눔", size: 12)!)
+           let c3 = Character(value: "l", color: .blue, font: UIFont(name: "나눔", size: 12)!)
+           let c4 = Character(value: "l", color: .yellow, font: UIFont(name: "나눔", size: 12)!)
+           let c5 = Character(value: "5", color: .green, font: UIFont(name: "나눔", size: 12)!)
+   	}
+   }
+   ```
+
+   - 위와 같이 구현하게 되면 동일한 값을 가지는 UIFont 객체를 중복으로 생성하게 된다.
+   - 위 코드에서는 별 문제가 되지 않지만, 객체가 굉장히 많이 생성된다고 하는 경우에는 메모리이슈가 생길 수 있다.
+
+   ```swift
+   class FontFactory {
+       private var cache: [String: UIFont] = [:]
+       
+       func getFont(name: String, size: CGFloat) -> UIFont {
+           if cache[name] == nil {
+               cache[name] = UIFont(name: name, size: size)
+           }
+           return cache[name]!
+       }
+   }
+   
+   class FlyWeightApp {
+   
+    func start() {
+           let fontFactory = FontFactory()
+           let c1 = Character(value: "h", color: .black, font: fontFactory.getFont(name: "나눔", size: 12))
+           let c2 = Character(value: "e", color: .red, font: fontFactory.getFont(name: "나눔", size: 12))
+           let c3 = Character(value: "l", color: .blue, font: fontFactory.getFont(name: "나눔", size: 12))
+           let c4 = Character(value: "l", color: .yellow, font: fontFactory.getFont(name: "나눔", size: 12))
+           let c5 = Character(value: "5", color: .green, font: fontFactory.getFont(name: "나눔", size: 12))
+       }
+   }
+   ```
+
+   - 이처럼 factory 클래스의 캐싱를 사용해서 동일한 값을 가지는 변하지않는 속성은 객체를 추가로 생성하지 않고 재사용이 가능하다.
+   - 기존 구조를 개선하는 패턴과는 다르게 성능을 개선하는 목적이 더 크다.
+
+4. 장단점
+   - 장점 : 메모리 성능 개선
+   - 단점 : 코드 복잡도 증가
+
+
 
 
 
 ### 7. 프록시 패턴
+
+1. 개념
+
+   - 특정 객체에 대한 접근을 제어하거나 기능을 추가할 수 있는 패턴 (proxy 객체(대리인)를 거쳐서 특정 행동이 가능하도록 하는 방법)
+     - 초기화 지연, 접근 제어, 로깅, 캐싱 등 다양하게 응용해서 사용할 수 있다.
+
+2. 구조 및 특징
+
+   <img src="./images/ProxyPattern.png" alt="" style="zoom:50%;" />
+
+   - Client 는 RealSubject에 곧바로 접근하지 않고 Proxy 객체에 접근하게 된다.
+   - Proxy 객체는 본인과 RealSubject의 타입인 객체를 참조하고 있다. 이는 RealSubject에 접근하기 위함이다.
+
+3. 구현
+
+   ```swift
+   // 1. Inerface
+   protocol GameService {
+       func startGame();
+   }
+   ```
+
+   ```swift
+   // 2. Real Subject
+   class RealGameService: GameService {
+       func startGame() {
+           print("게임을 시작합니다.")
+       }
+   }
+   ```
+
+   ```swift
+   // 3. Proxy Subject
+   class ProxyGameService: GameService {
+       var gameService: GameService?   // 인터페이스 타입에 대한 참조를 가진다.
+       
+       func startGame() {
+           // 프록시패턴 - 이른 초기화(Eager Initialization) 사용
+           if gameService == nil {
+               gameService = RealGameService()
+           }
+           gameService!.startGame()
+       }
+   }
+   ```
+
+   ```swift
+   func start() {
+           let gameService = ProxyGameService()
+           gameService.startGame()
+   }
+   ```
+
+   
+
+4. 장단점
+
+   1. 장점
+
+      - 기존 코드를 수정하지 않고 구현이 가능하다. (실제로 객체를 사용하는 코드는 그대로 두고, Proxy 와 Real 클래스로 나누어서 추가적인 처리가 가능함!)
+        - 객체지향 Open Closed Principle 원칙
+      - 초기화 지연, 캐싱, 로깅, 시간측정 등을 구현할 수 있음
+
+      - 상속이 아닌 인터페이스(프로토콜)을 이용하기 때문에 제약사항 (한 개의 상속만 가능, final 키워드 사용시 상속 불가능 등)에서 조금 더 자유롭다.
+
+   2. 단점
+      - 코드 복잡도 증가
 
 
 
