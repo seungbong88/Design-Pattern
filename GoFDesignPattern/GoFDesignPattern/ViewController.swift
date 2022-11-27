@@ -12,12 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .lightGray
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        flyweightTest()
+        commandTest()
     }
     
     private func singletonTest() {
@@ -52,5 +51,9 @@ class ViewController: UIViewController {
         let flyweightApp = FlyWeightApp()
         flyweightApp.start()
     }
+    
+    private func commandTest() {
+        let commandApp = CommandApp()
+        commandApp.start()
+    }
 }
-

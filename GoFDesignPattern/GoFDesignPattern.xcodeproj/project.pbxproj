@@ -62,6 +62,13 @@
 		CBB283E5292A1E6D005A405B /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283E4292A1E6D005A405B /* GameService.swift */; };
 		CBB283E729331CAF005A405B /* RealGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283E629331CAF005A405B /* RealGameService.swift */; };
 		CBB283E929331CDD005A405B /* ProxyGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283E829331CDD005A405B /* ProxyGameService.swift */; };
+		CBB283F829333480005A405B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283F729333480005A405B /* Command.swift */; };
+		CBB283FA293334BD005A405B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283F9293334BD005A405B /* CustomButton.swift */; };
+		CBB283FC29333542005A405B /* CommandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283FB29333542005A405B /* CommandApp.swift */; };
+		CBB283FE29333576005A405B /* LightOnOffCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB283FD29333576005A405B /* LightOnOffCommand.swift */; };
+		CBB28401293335C5005A405B /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB28400293335C5005A405B /* Light.swift */; };
+		CBB28403293336FD005A405B /* ScreenModeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB28402293336FD005A405B /* ScreenModeCommand.swift */; };
+		CBB284072933377C005A405B /* ScreenSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB284062933377C005A405B /* ScreenSetting.swift */; };
 		CBDEA4AE28F40CF700D6C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */; };
 		CBDEA4B028F40CF700D6C36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */; };
 		CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDEA4B128F40CF700D6C36B /* ViewController.swift */; };
@@ -127,6 +134,13 @@
 		CBB283E4292A1E6D005A405B /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		CBB283E629331CAF005A405B /* RealGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealGameService.swift; sourceTree = "<group>"; };
 		CBB283E829331CDD005A405B /* ProxyGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyGameService.swift; sourceTree = "<group>"; };
+		CBB283F729333480005A405B /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		CBB283F9293334BD005A405B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CBB283FB29333542005A405B /* CommandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandApp.swift; sourceTree = "<group>"; };
+		CBB283FD29333576005A405B /* LightOnOffCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightOnOffCommand.swift; sourceTree = "<group>"; };
+		CBB28400293335C5005A405B /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		CBB28402293336FD005A405B /* ScreenModeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenModeCommand.swift; sourceTree = "<group>"; };
+		CBB284062933377C005A405B /* ScreenSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSetting.swift; sourceTree = "<group>"; };
 		CBDEA4AA28F40CF700D6C36B /* GoFDesignPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFDesignPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -395,6 +409,60 @@
 			path = "7. Proxy";
 			sourceTree = "<group>";
 		};
+		CBB283EA29332303005A405B /* Behavior Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				CBB283ED29332BDE005A405B /* 1. Chain-of-Responsibility */,
+				CBB283F629333471005A405B /* 2. Command */,
+			);
+			path = "Behavior Pattern";
+			sourceTree = "<group>";
+		};
+		CBB283ED29332BDE005A405B /* 1. Chain-of-Responsibility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "1. Chain-of-Responsibility";
+			sourceTree = "<group>";
+		};
+		CBB283F629333471005A405B /* 2. Command */ = {
+			isa = PBXGroup;
+			children = (
+				CBB283FB29333542005A405B /* CommandApp.swift */,
+				CBB284052933376C005A405B /* Invoker */,
+				CBB2840429333764005A405B /* Receiver */,
+				CBB283FF293335BB005A405B /* Command */,
+			);
+			path = "2. Command";
+			sourceTree = "<group>";
+		};
+		CBB283FF293335BB005A405B /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				CBB283F729333480005A405B /* Command.swift */,
+				CBB283FD29333576005A405B /* LightOnOffCommand.swift */,
+				CBB28402293336FD005A405B /* ScreenModeCommand.swift */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		CBB2840429333764005A405B /* Receiver */ = {
+			isa = PBXGroup;
+			children = (
+				CBB28400293335C5005A405B /* Light.swift */,
+				CBB284062933377C005A405B /* ScreenSetting.swift */,
+			);
+			path = Receiver;
+			sourceTree = "<group>";
+		};
+		CBB284052933376C005A405B /* Invoker */ = {
+			isa = PBXGroup;
+			children = (
+				CBB283F9293334BD005A405B /* CustomButton.swift */,
+			);
+			path = Invoker;
+			sourceTree = "<group>";
+		};
 		CBDEA4A128F40CF700D6C36B = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +484,7 @@
 			children = (
 				CBA6D638290AA13000877E54 /* Creation Pattern */,
 				CBA6D639290AA13A00877E54 /* Structure Pattern */,
+				CBB283EA29332303005A405B /* Behavior Pattern */,
 				CBDEA4AD28F40CF700D6C36B /* AppDelegate.swift */,
 				CBDEA4AF28F40CF700D6C36B /* SceneDelegate.swift */,
 				CBDEA4B128F40CF700D6C36B /* ViewController.swift */,
@@ -510,12 +579,14 @@
 				CBA795F9290FBBEA004BBE05 /* Champion.swift in Sources */,
 				CB1E91C128F4866300CFECBD /* GithubRepository.swift in Sources */,
 				CBB283DE292A1909005A405B /* Character.swift in Sources */,
+				CBB284072933377C005A405B /* ScreenSetting.swift in Sources */,
 				CBA7961B290FCF52004BBE05 /* Item.swift in Sources */,
 				CB0827D2290AB566008167A7 /* OtherUserServiceAdapter.swift in Sources */,
 				CBB283E729331CAF005A405B /* RealGameService.swift in Sources */,
 				CB0827CA290AAEA2008167A7 /* OtherUser.swift in Sources */,
 				CBB283E5292A1E6D005A405B /* GameService.swift in Sources */,
 				CBB283CF2920CEFA005A405B /* AmericanoDecorator.swift in Sources */,
+				CBB283FE29333576005A405B /* LightOnOffCommand.swift in Sources */,
 				CBB283CD2920CEAA005A405B /* DefaultAmericano.swift in Sources */,
 				CB1E91B928F431C500CFECBD /* TourPlan.swift in Sources */,
 				CBDEA4B228F40CF700D6C36B /* ViewController.swift in Sources */,
@@ -542,19 +613,23 @@
 				CBA79626290FE51F004BBE05 /* CommentService.swift in Sources */,
 				CBA6D63D290AA60C00877E54 /* Account.swift in Sources */,
 				CBA79601290FBC70004BBE05 /* 크리스마스카이사.swift in Sources */,
+				CBB28403293336FD005A405B /* ScreenModeCommand.swift in Sources */,
 				CBA79604290FBD01004BBE05 /* DefaultChampion.swift in Sources */,
 				CB1E91BC28F4367D00CFECBD /* TourDirector.swift in Sources */,
 				CBB283D42920D037005A405B /* vanillaAmericanoDecorator.swift in Sources */,
 				CBA698F82917F0BB00588EBE /* ASIS_SpamFilteringCommentService.swift in Sources */,
+				CBB283F829333480005A405B /* Command.swift in Sources */,
 				CBA79624290FE508004BBE05 /* DecoratorApp.swift in Sources */,
 				CB0827CC290AAF1D008167A7 /* OtherUserService.swift in Sources */,
 				CB1E91B628F431B900CFECBD /* DefaultTourPalnBuilder.swift in Sources */,
 				CBA795FD290FBC58004BBE05 /* 좀비카이사.swift in Sources */,
 				CBA7960C290FBE23004BBE05 /* ChristmasSkin.swift in Sources */,
 				CBB283DA2920DF85005A405B /* FlyWeightApp.swift in Sources */,
+				CBB28401293335C5005A405B /* Light.swift in Sources */,
 				CBA79606290FBD06004BBE05 /* Skin.swift in Sources */,
 				CBB283D12920CF57005A405B /* HazelnutAmericanoDecorator.swift in Sources */,
 				CBA698F62917F0B100588EBE /* ASIS_TrimmingCommentService.swift in Sources */,
+				CBB283FC29333542005A405B /* CommandApp.swift in Sources */,
 				CB0827D0290AB1B4008167A7 /* OtherUserAdapter.swift in Sources */,
 				CB1E91C328F4866B00CFECBD /* GithubIssue.swift in Sources */,
 				CBDEA4C328F40F8700D6C36B /* Settings.swift in Sources */,
@@ -563,6 +638,7 @@
 				CB1E91B228F4314E00CFECBD /* TourPlanBuilder.swift in Sources */,
 				CBA79621290FD7DB004BBE05 /* Component.swift in Sources */,
 				CBA79614290FBFD7004BBE05 /* 카이사.swift in Sources */,
+				CBB283FA293334BD005A405B /* CustomButton.swift in Sources */,
 				CBA79610290FBF05004BBE05 /* BridgeApp.swift in Sources */,
 				CBA7960E290FBE44004BBE05 /* ZombieSkin.swift in Sources */,
 				CBB283CB2920CE48005A405B /* Americano.swift in Sources */,

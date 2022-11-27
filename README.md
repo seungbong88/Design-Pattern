@@ -582,7 +582,7 @@
 
    
 
-### 6. 플라이웨이트 패턴
+### 6. 플라이웨이트 패턴 - Flyweight Pattern
 
 1. 개념
 
@@ -649,7 +649,7 @@
 
 
 
-### 7. 프록시 패턴
+### 7. 프록시 패턴 - Proxy Pattern
 
 1. 개념
 
@@ -662,6 +662,7 @@
 
    - Client 는 RealSubject에 곧바로 접근하지 않고 Proxy 객체에 접근하게 된다.
    - Proxy 객체는 본인과 RealSubject의 타입인 객체를 참조하고 있다. 이는 RealSubject에 접근하기 위함이다.
+   - Java 에서는 Proxy 객체를 만드는 공통화된 작업을 하지 않아도 runtime 에서 쉽게 사용할 수 있도록 dynamic proxy 기능을 제공한다. Swift도 이와 비슷한 Mirror객체가 있는 듯 하다..!
 
 3. 구현
 
@@ -705,18 +706,13 @@
 
    
 
-4. 장단점
+4. 장점
 
-   1. 장점
-
-      - 기존 코드를 수정하지 않고 구현이 가능하다. (실제로 객체를 사용하는 코드는 그대로 두고, Proxy 와 Real 클래스로 나누어서 추가적인 처리가 가능함!)
-        - 객체지향 Open Closed Principle 원칙
-      - 초기화 지연, 캐싱, 로깅, 시간측정 등을 구현할 수 있음
-
-      - 상속이 아닌 인터페이스(프로토콜)을 이용하기 때문에 제약사항 (한 개의 상속만 가능, final 키워드 사용시 상속 불가능 등)에서 조금 더 자유롭다.
-
-   2. 단점
-      - 코드 복잡도 증가
+   - 기존 코드를 수정하지 않고 구현이 가능하다. (실제로 객체를 사용하는 코드는 그대로 두고, Proxy 와 Real 클래스로 나누어서 추가적인 처리가 가능함!)
+     - 객체지향 Open Closed Principle 원칙
+   - 초기화 지연, 캐싱, 로깅, 시간측정 등을 구현할 수 있음
+   
+   - 상속이 아닌 인터페이스(프로토콜)을 이용하기 때문에 제약사항 (한 개의 상속만 가능, final 키워드 사용시 상속 불가능 등)에서 조금 더 자유롭다.
 
 
 
@@ -726,9 +722,181 @@
 
 
 
-### 1. 책임 연쇄 패턴
+### 1. 책임 연쇄 패턴 - Chain-of-Respnosibiltiy Pattern
+
+1. 개념
+
+   - 요청을 보내는 쪽(sender)과 요청을 처리하는 쪽(receiver)을 분리하는 패턴
+   - 요청을 처리하는 쪽에서 단일 책임의 원칙을 지킬 수 있도록 연쇄된 구조로 책임을 처리하도록 하는 방법
+
+2. 구조 및 특징
+
+   <img src="./images/Chain-of-Responsibility.png" alt="" style="zoom:50%;" />
+
+3. 구현
+
+4. 장단점
+
+짱나니까 걍 패스 ㅋ
+
+
 
 ### 2. 커맨드 패턴
+
+1. 개념
+
+   - 요청을 보내는 invoker와 요청을 받아 처리하는 receiver 사이가 긴밀하게 연결되어있을 때 이를 분리하는 패턴. (결합도가 높으면 하나를 수정할 때 영향을 받는 코드가 많아짐)
+   - <u>요청을 처리하는 방법이 바뀌더라도 호출자(invoker)의 코드는 바뀌지 않도록 하는 방법</u>
+
+2. 구조 및 특징
+
+   <img src="./images/CommandPattern.png" alt="" style="zoom:50%;" />
+
+   - Invoker : 요청을 보내는 부분
+   - Receiver : 요청을 받아 처리하는 부분
+
+3. 구현
+
+   - AS-IS
+
+     - Receiver 인 Light, ScreenSetting 이 변경될 때 마다 Invoker의 코드를 일일이 수정해주어야 함
+
+   - TO-BE
+
+     - Invoker 와 Receiver를 구분한다.
+
+       ```swift
+       // 1. Invoker
+       class CustomButton {
+           func buttonDidTap() {
+       			// 버튼이 눌렸을때 동작을 처리한다.
+           }
+       }
+       ```
+
+       ```swift
+       // 2. Receiver
+       class Light {
+           private var isOn: Bool = false
+           
+           func switchLightOnOff() {
+               if self.isOn {
+                   lightOff()
+               } else {
+                   lightOn()
+               }
+           }
+           
+           private func lightOn() {
+               isOn = true
+               print("불이 켜졌습니다.")
+           }
+           
+           private func lightOff() {
+               isOn = false
+               print("불이 꺼졌습니다.")
+           }
+       }
+       
+       // 2. Receiver
+       class ScreenSetting {
+           
+           enum ScreenMode {
+               case darkMode
+               case whiteMode
+           }
+           
+           private var screenMode: ScreenMode = .whiteMode
+           
+           func switchScreenMode() {
+               if self.screenMode == .whiteMode {
+                   setDarkMode()
+               } else {
+                   setWhiteMode()
+               }
+           }
+           
+           private func setDarkMode() {
+               screenMode = .darkMode
+               print("다크모드로 전환되었습니다.")
+           }
+           
+           private func setWhiteMode() {
+               screenMode = .whiteMode
+               print("일반모드로 전환되었습니다.")
+           }
+       }
+       ```
+
+     - 동작을 수행하는 Command 인터페이스를 정의한다.
+
+       ```swift
+       // 3. Command Interface
+       protocol Command {
+           func execute()
+       }
+       ```
+
+     - Receiver 에 따라 다른 기능을 구현하도록 연결하는 Concrete Command 클래스를  구현한다.
+
+       ```swift
+       // 4. Concrete Command
+       class LightOnOffCommand: Command {
+           
+           var light: Light
+           
+           init(light: Light) {
+               self.light = light
+           }
+           
+           func execute() {
+               light.switchLightOnOff()
+           }
+       }
+       
+       class ScreenSettingCommand: Command {
+           private var screenSetting: ScreenSetting
+           
+           init(screenSetting: ScreenSetting) {
+               self.screenSetting = screenSetting
+           }
+           
+           func execute() {
+               screenSetting.switchScreenMode()
+           }
+       }
+       ```
+
+     - Client 는 아래와 같이 호출하면 된다.
+
+       ```swift
+       class CommandApp {
+           
+           func start() {
+               let lightButton = CustomButton(command: LightOnOffCommand(light: Light()))
+               lightButton.buttonDidTap()
+               lightButton.buttonDidTap()
+               lightButton.buttonDidTap()
+               lightButton.buttonDidTap()
+               
+               let screenSettingButton = CustomButton(command: ScreenSettingCommand(screenSetting: ScreenSetting()))
+               screenSettingButton.buttonDidTap()
+               screenSettingButton.buttonDidTap()
+               screenSettingButton.buttonDidTap()
+           }
+       }
+       ```
+
+       - Invoker (CustomButton) 은 변경하지 않고 구현이 가능하다.
+
+4. 장점
+
+   - Invoker를 수정하지 않고 Receiver를 추가할 수 있다는 점에서 Open Closed 원칙을 지향함
+   - 각 Command 는 각자의 기능만을 하고 있기 때문에 단일 책임의 원칙을 지향함
+
+   - 각 Command 객체들은 재사용이 가능함
+
+
 
 ### 3. 인터프리터 패턴
 
@@ -748,3 +916,10 @@
 
 ### 11. 비지터 패턴
 
+
+
+---
+
+공부중에 궁금한 점
+
+- 인터페이스 vs 상속 vs 추상클래스
